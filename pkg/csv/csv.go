@@ -55,16 +55,3 @@ func CSVToJSON(csvData []CSV) error {
 
 	return nil
 }
-
-func CSVToJSO(data interface{}) error {
-
-	jsonData, err := json.MarshalIndent(data,"","    ")
-
-	if err != nil {
-		return err
-	}
-
-	fmt.Printf("%s\n",jsonData)
-
-	return nil
-}
