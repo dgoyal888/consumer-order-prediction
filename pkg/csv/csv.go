@@ -8,9 +8,9 @@ import (
 )
 
 type CSV struct {
-	customerID string
-	customerName string
-	cuisine string
+	CustomerID string
+	CustomerName string
+	Cuisine string
 }
 
 func ReadCSVData(filePath string) ([]CSV,error){
@@ -39,7 +39,7 @@ func ReadCSVData(filePath string) ([]CSV,error){
 			break
 		}
 		csv := CSV{csv[0],csv[1],csv[2]}
-		csvDataSlice = append(csvDataSlice,[]CSV{csv}...)
+		csvDataSlice = append(csvDataSlice,csv)
 	}
 
 	return csvDataSlice,nil

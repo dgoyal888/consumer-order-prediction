@@ -1,5 +1,17 @@
 [
-    {},
-    {},
-    {}
+    {
+        "CustomerID": "abc",
+        "CustomerName": "abc",
+        "Cuisine": "def"
+    },
+    {
+        "CustomerID": "abc",
+        "CustomerName": "cdf",
+        "Cuisine": "def"
+    },
+    {
+        "CustomerID": "acv",
+        "CustomerName": "dfv",
+        "Cuisine": "erf"
+    }
 ]
