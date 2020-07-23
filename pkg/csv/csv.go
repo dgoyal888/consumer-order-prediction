@@ -3,18 +3,20 @@ package csv
 import (
 	"encoding/csv"
 	"encoding/json"
-	"fmt"
 	"os"
 	"strconv"
 )
 
-type CSV struct {
-	CustomerID int64
-	CustomerName string
-	Cuisine string
+type Order struct {
+	CustomerID int64 `json:",omitempty"`
+	CustomerName string `json:",omitempty"`
+	VegCuisine string `json:",omitempty"`
+	NonVegCuisine string `json:",omitempty"`
+	State string `json:",omitempty"`
+	//RestsurantName string `json:",omitempty"`
 }
 
-func ReadCSVData(filePath string) ([]CSV,error){
+func ReadCSVData(filePath string) ([]Order,error){
 
 	csvfile, err := os.Open(filePath)
 
@@ -30,7 +32,7 @@ func ReadCSVData(filePath string) ([]CSV,error){
 		return nil,err
 	}
 
-	csvDataSlice := []CSV{}
+	csvDataSlice := []Order{}
 
 	for i, csv := range csvData {
 		if i == 0 {
@@ -39,15 +41,15 @@ func ReadCSVData(filePath string) ([]CSV,error){
 		if i == 5 {
 			break
 		}
-		customerID,_ :=  strconv.ParseInt(csv[0],10,32)
-		csv := CSV{customerID,csv[1],csv[2]}
-		csvDataSlice = append(csvDataSlice,csv)
+		customerID,_ :=  strconv.ParseInt(csv[1],10,32)
+		order := Order{customerID,csv[2],csv[3],csv[4],csv[11]}
+		csvDataSlice = append(csvDataSlice,order)
 	}
 
 	return csvDataSlice,nil
 }
 
-func CSVToJSON(csvData []CSV) error {
+func CSVToJSON(csvData []Order) error {
 
 	jsonData, err := json.MarshalIndent(csvData,"","    ")
 
@@ -55,9 +57,8 @@ func CSVToJSON(csvData []CSV) error {
 		return err
 	}
 
-	fmt.Printf("%s\n",jsonData)
-
 	jsonFile, err := os.Create("data/orderdata.json")
+
 	if err != nil {
 		return err
 	}

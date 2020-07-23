@@ -1,17 +1,27 @@
 [
     {
-        "CustomerID": 0,
-        "CustomerName": "abc",
-        "Cuisine": "def"
+        "CustomerID": 712,
+        "CustomerName": "Lacee Seagar",
+        "VegCuisine": "Paneer makhni",
+        "NonVegCuisine": "fish steak",
+        "State": "Minnesota"
     },
     {
-        "CustomerID": 1,
-        "CustomerName": "cdf",
-        "Cuisine": "def"
+        "CustomerID": 93,
+        "CustomerName": "Dougy Linturn",
+        "VegCuisine": "Nan",
+        "State": "Texas"
     },
     {
-        "CustomerID": 2,
-        "CustomerName": "dfv",
-        "Cuisine": "erf"
+        "CustomerID": 746,
+        "CustomerName": "Coletta Sket",
+        "VegCuisine": "cheese burger",
+        "State": "California"
+    },
+    {
+        "CustomerID": 719,
+        "CustomerName": "Elka Feria",
+        "VegCuisine": "Bhel",
+        "State": "Texas"
     }
 ]

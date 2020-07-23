@@ -2,6 +2,7 @@ package main
 
 import (
 	"consumer-order-prediction/pkg/csv"
+	"consumer-order-prediction/pkg/rules"
 	"fmt"
 )
 
@@ -19,5 +20,25 @@ func main() {
 	if err != nil {
 		fmt.Println("Error while converting  CSV to Json data: %s",err.Error())
 	}
+
+	//Will uncomment after Restaurant names field
+	/*err = rules.PopularRestaurants("data/orderdata.json")
+
+	if err != nil {
+		fmt.Println("Error while finding popular restaurants: %s",err.Error())
+	}*/
+
+	err = rules.PopularVegCuisines("data/orderdata.json")
+
+	if err != nil {
+		fmt.Println("Error while finding popular veg cuisine: %s",err.Error())
+	}
+
+	err = rules.PopularNonVegCuisines("data/orderdata.json")
+
+	if err != nil {
+		fmt.Println("Error while finding popular non-veg cuisine: %s",err.Error())
+	}
+
 }
 
