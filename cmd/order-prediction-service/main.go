@@ -21,12 +21,11 @@ func main() {
 		fmt.Println("Error while converting  CSV to Json data: %s",err.Error())
 	}
 
-	//Will uncomment after Restaurant names field
-	/*err = rules.PopularRestaurants("data/orderdata.json")
+	err = rules.PopularRestaurants("data/orderdata.json")
 
 	if err != nil {
 		fmt.Println("Error while finding popular restaurants: %s",err.Error())
-	}*/
+	}
 
 	err = rules.PopularVegCuisines("data/orderdata.json")
 

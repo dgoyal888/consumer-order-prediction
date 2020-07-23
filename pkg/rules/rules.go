@@ -8,7 +8,7 @@ import (
 	"consumer-order-prediction/pkg/csv"
 )
 
-/*func PopularRestaurants(filePath string) error {
+func PopularRestaurants(filePath string) error {
 
 	jsonFile, err := os.Open(filePath)
 
@@ -34,7 +34,7 @@ import (
 	}
 
 	return nil
-}*/
+}
 
 func PopularVegCuisines(filePath string) error {
 

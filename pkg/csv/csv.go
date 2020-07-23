@@ -10,10 +10,10 @@ import (
 type Order struct {
 	CustomerID int64 `json:",omitempty"`
 	CustomerName string `json:",omitempty"`
+	RestsurantName string `json:",omitempty"`
 	VegCuisine string `json:",omitempty"`
 	NonVegCuisine string `json:",omitempty"`
 	State string `json:",omitempty"`
-	//RestsurantName string `json:",omitempty"`
 }
 
 func ReadCSVData(filePath string) ([]Order,error){
@@ -42,7 +42,7 @@ func ReadCSVData(filePath string) ([]Order,error){
 			break
 		}
 		customerID,_ :=  strconv.ParseInt(csv[1],10,32)
-		order := Order{customerID,csv[2],csv[3],csv[4],csv[11]}
+		order := Order{customerID,csv[2],csv[3],csv[4],csv[5],csv[12]}
 		csvDataSlice = append(csvDataSlice,order)
 	}
 

@@ -1,27 +1,32 @@
 [
     {
-        "CustomerID": 712,
-        "CustomerName": "Lacee Seagar",
-        "VegCuisine": "Paneer makhni",
-        "NonVegCuisine": "fish steak",
-        "State": "Minnesota"
+        "CustomerID": 386,
+        "CustomerName": "Marcus Bisterfeld",
+        "RestsurantName": "Deepanshu da Dhaba",
+        "VegCuisine": "Bhel",
+        "State": "Florida"
     },
     {
-        "CustomerID": 93,
-        "CustomerName": "Dougy Linturn",
-        "VegCuisine": "Nan",
-        "State": "Texas"
-    },
-    {
-        "CustomerID": 746,
-        "CustomerName": "Coletta Sket",
+        "CustomerID": 97,
+        "CustomerName": "Tammara Gaynor",
+        "RestsurantName": "Central Tiffin Room",
         "VegCuisine": "cheese burger",
+        "State": "Wisconsin"
+    },
+    {
+        "CustomerID": 694,
+        "CustomerName": "Sibbie Grieve",
+        "RestsurantName": "rt’s kitchen",
+        "VegCuisine": "Paneer makhni",
+        "NonVegCuisine": "chicken biryani",
         "State": "California"
     },
     {
-        "CustomerID": 719,
-        "CustomerName": "Elka Feria",
-        "VegCuisine": "Bhel",
-        "State": "Texas"
+        "CustomerID": 178,
+        "CustomerName": "Maxine Martelet",
+        "RestsurantName": "AR North Indian Food Corner",
+        "VegCuisine": "uttapam",
+        "NonVegCuisine": "shrimp",
+        "State": "New York"
     }
 ]
