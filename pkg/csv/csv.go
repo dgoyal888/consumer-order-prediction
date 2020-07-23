@@ -55,5 +55,14 @@ func CSVToJSON(csvData []CSV) error {
 
 	fmt.Printf("%s\n",jsonData)
 
+	jsonFile, err := os.Create("data/orderdata.json")
+	if err != nil {
+		return err
+	}
+
+	defer jsonFile.Close()
+
+	jsonFile.Write(jsonData)
+
 	return nil
 }
