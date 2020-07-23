@@ -1,16 +1,16 @@
 [
     {
-        "CustomerID": "abc",
+        "CustomerID": 0,
         "CustomerName": "abc",
         "Cuisine": "def"
     },
     {
-        "CustomerID": "abc",
+        "CustomerID": 1,
         "CustomerName": "cdf",
         "Cuisine": "def"
     },
     {
-        "CustomerID": "acv",
+        "CustomerID": 2,
         "CustomerName": "dfv",
         "Cuisine": "erf"
     }

@@ -5,10 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 type CSV struct {
-	CustomerID string
+	CustomerID int64
 	CustomerName string
 	Cuisine string
 }
@@ -38,7 +39,8 @@ func ReadCSVData(filePath string) ([]CSV,error){
 		if i == 5 {
 			break
 		}
-		csv := CSV{csv[0],csv[1],csv[2]}
+		customerID,_ :=  strconv.ParseInt(csv[0],10,32)
+		csv := CSV{customerID,csv[1],csv[2]}
 		csvDataSlice = append(csvDataSlice,csv)
 	}
 

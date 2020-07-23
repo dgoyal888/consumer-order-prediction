@@ -1,4 +1,4 @@
 customerID,customerName,cuisine
-abc,abc,def
-abc,cdf,def
-acv,dfv,erf
+0,abc,def
+1,cdf,def
+2,dfv,erf
