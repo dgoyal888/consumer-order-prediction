@@ -17,11 +17,11 @@ func ReadCSVData(filePath string) ([]CSV,error){
 
 	csvfile, err := os.Open(filePath)
 
-	defer csvfile.Close()
-
 	if err != nil {
 		return nil,err
 	}
+
+	defer csvfile.Close()
 
 	csvData,err := csv.NewReader(csvfile).ReadAll()
 
