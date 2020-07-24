@@ -21,19 +21,19 @@ func main() {
 		fmt.Println("Error while converting  CSV to Json data: %s",err.Error())
 	}
 
-	err = rules.PopularRestaurant("data/orderdata.json")
+	_,err = rules.PopularRestaurant("data/orderdata.json")
 
 	if err != nil {
 		fmt.Println("Error while finding popular restaurants: %s",err.Error())
 	}
 
-	err = rules.PopularVegCuisine("data/orderdata.json")
+	_,err = rules.PopularVegCuisine("data/orderdata.json")
 
 	if err != nil {
 		fmt.Println("Error while finding popular veg cuisine: %s",err.Error())
 	}
 
-	err = rules.PopularNonVegCuisine("data/orderdata.json")
+	_,err = rules.PopularNonVegCuisine("data/orderdata.json")
 
 	if err != nil {
 		fmt.Println("Error while finding popular non-veg cuisine: %s",err.Error())
