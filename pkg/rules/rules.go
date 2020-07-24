@@ -5,23 +5,24 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strconv"
 
 	"consumer-order-prediction/pkg/csv"
 )
 
-func PopularRestaurant(filePath string) error {
+func PopularRestaurant(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
-
+	var popularrestaurantobject csv.Order
 	if err != nil {
-		return err
+		return popularrestaurantobject,err
 	}
 
 	defer jsonFile.Close()
 	byteValue, err := ioutil.ReadAll(jsonFile)
 
 	if err != nil {
-		return err
+		return popularrestaurantobject,err
 	}
 
 	var orderData []csv.Order
@@ -37,26 +38,27 @@ func PopularRestaurant(filePath string) error {
 		if popularRestaurants[orderData[i].RestsurantName] > popularRestaurantFreq {
 			popularRestaurantFreq =  popularRestaurants[orderData[i].RestsurantName]
 			popularRestaurantName = orderData[i].RestsurantName
+			popularrestaurantobject=orderData[i]
 		}
 	}
 
-	fmt.Println("Most Popular Restaurant is %s",popularRestaurantName)
-	return nil
+	fmt.Printf("Most Popular Restaurant is %s",popularRestaurantName)
+	return popularrestaurantobject,nil
 }
 
-func PopularVegCuisine(filePath string) error {
+func PopularVegCuisine(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
-
+	var popularvegcuisineobject csv.Order
 	if err != nil {
-		return err
+		return popularvegcuisineobject,err
 	}
 
 	defer jsonFile.Close()
 	byteValue, err := ioutil.ReadAll(jsonFile)
 
 	if err != nil {
-		return err
+		return popularvegcuisineobject,err
 	}
 
 	var orderData []csv.Order
@@ -72,18 +74,77 @@ func PopularVegCuisine(filePath string) error {
 		if popularCuisines[orderData[i].VegCuisine] > popularCuisineFreq {
 			popularCuisineFreq =  popularCuisines[orderData[i].VegCuisine]
 			popularCuisineName = orderData[i].VegCuisine
+			popularvegcuisineobject = orderData[i]
 		}
 	}
 
-	fmt.Println("Most Popular Veg cuisine is %s",popularCuisineName)
+	fmt.Printf("Most Popular Veg cuisine is %s",popularCuisineName)
 
-	return nil
+	return popularvegcuisineobject,nil
 }
 
-func PopularNonVegCuisine(filePath string) error {
+func PopularNonVegCuisine(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
+	var ppopularVegCuisine csv.Order
+	if err != nil {
+		return ppopularVegCuisine,nil
+	}
 
+	defer jsonFile.Close()
+	byteValue, err := ioutil.ReadAll(jsonFile)
+
+	if err != nil {
+		return ppopularVegCuisine,err
+	}
+
+	var orderData []csv.Order
+	err = json.Unmarshal(byteValue, &orderData)
+
+	popularCuisines := make(map[string]int)
+
+	var popularCuisineFreq int
+	var popularCuisineName string
+	//var ppopularVegCuisine csv.Order
+
+	for i := 0; i < len(orderData); i++ {
+		if len(orderData[i].NonVegCuisine) != 0 {
+			popularCuisines[orderData[i].NonVegCuisine]++
+			if popularCuisines[orderData[i].NonVegCuisine] > popularCuisineFreq {
+			popularCuisineFreq = popularCuisines[orderData[i].NonVegCuisine]
+			popularCuisineName = orderData[i].NonVegCuisine
+			ppopularVegCuisine = orderData[i]
+			}
+		}
+	}
+
+	fmt.Printf("Most Popular Non-Veg Cuisine is %s",popularCuisineName)
+
+	return ppopularVegCuisine,nil
+}
+func ReturnJsonBasedOnCUSTID(custid string) (csv.Order,error){
+	jsonFile, err := os.Open("data/orderdata.json")
+	if err!=nil{
+		return csv.Order{},fmt.Errorf("Error finding file")
+	}
+	defer jsonFile.Close()
+	byteValue, err := ioutil.ReadAll(jsonFile)
+	if err!=nil{
+		return csv.Order{},fmt.Errorf("Error reading file")
+	}
+	var orderData []csv.Order
+	err = json.Unmarshal(byteValue, &orderData)
+	for i := 0; i < len(orderData); i++ {
+		cust,_:=strconv.ParseInt(custid,10,64)
+		if orderData[i].CustomerID==cust{
+			return orderData[i],nil
+		}
+	}
+	return csv.Order{},fmt.Errorf("Error finding id")
+}
+
+func Appendtofile(order *csv.Order) error{
+	jsonFile, err := os.Open("data/orderdataapi.json")
 	if err != nil {
 		return err
 	}
@@ -96,24 +157,20 @@ func PopularNonVegCuisine(filePath string) error {
 	}
 
 	var orderData []csv.Order
-	err = json.Unmarshal(byteValue, &orderData)
+	json.Unmarshal(byteValue,&orderData)
+	orderData=append(orderData,*order)
+	jsonData, err := json.MarshalIndent(orderData,"","    ")
+	if err != nil {
+		return err
+	}
+	jsonFile, err= os.Create("data/orderdataapi.json")
 
-	popularCuisines := make(map[string]int)
-
-	var popularCuisineFreq int
-	var popularCuisineName string
-
-	for i := 0; i < len(orderData); i++ {
-		if len(orderData[i].NonVegCuisine) != 0 {
-			popularCuisines[orderData[i].NonVegCuisine]++
-			if popularCuisines[orderData[i].NonVegCuisine] > popularCuisineFreq {
-			popularCuisineFreq = popularCuisines[orderData[i].NonVegCuisine]
-			popularCuisineName = orderData[i].NonVegCuisine
-			}
-		}
+	if err != nil {
+		return err
 	}
 
-	fmt.Println("Most Popular Non-Veg Cuisine is %s",popularCuisineName)
+	defer jsonFile.Close()
 
+	jsonFile.Write(jsonData)
 	return nil
 }

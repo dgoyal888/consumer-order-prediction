@@ -1,0 +1,18 @@
+[
+    {
+        "CustomerID": 198,
+        "CustomerName": "Tynan McLae",
+        "RestsurantName": "DP Cafe",
+        "VegCuisine": "Nan",
+        "NonVegCuisine": "fish steak",
+        "State": "Texas"
+    },
+    {
+        "CustomerID": 184,
+        "CustomerName": "Garik Bramah",
+        "RestsurantName": "Blind chemistry",
+        "VegCuisine": "Nan",
+        "NonVegCuisine": "Pina Colada Pork Ribs",
+        "State": "Oklahoma"
+    }
+]
