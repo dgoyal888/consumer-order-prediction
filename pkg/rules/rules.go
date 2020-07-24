@@ -2,13 +2,14 @@ package rules
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 
 	"consumer-order-prediction/pkg/csv"
 )
 
-func PopularRestaurants(filePath string) error {
+func PopularRestaurant(filePath string) error {
 
 	jsonFile, err := os.Open(filePath)
 
@@ -29,14 +30,21 @@ func PopularRestaurants(filePath string) error {
 
 	popularRestaurants := make(map[string]int)
 
+	var popularRestaurantFreq int
+	var popularRestaurantName string
 	for i := 0; i < len(orderData); i++ {
 		popularRestaurants[orderData[i].RestsurantName]++
+		if popularRestaurants[orderData[i].RestsurantName] > popularRestaurantFreq {
+			popularRestaurantFreq =  popularRestaurants[orderData[i].RestsurantName]
+			popularRestaurantName = orderData[i].RestsurantName
+		}
 	}
 
+	fmt.Println("Most Popular Restaurant is %s",popularRestaurantName)
 	return nil
 }
 
-func PopularVegCuisines(filePath string) error {
+func PopularVegCuisine(filePath string) error {
 
 	jsonFile, err := os.Open(filePath)
 
@@ -55,15 +63,24 @@ func PopularVegCuisines(filePath string) error {
 	err = json.Unmarshal(byteValue, &orderData)
 
 	popularCuisines := make(map[string]int)
+
+	var popularCuisineFreq int
+	var popularCuisineName string
 
 	for i := 0; i < len(orderData); i++ {
 		popularCuisines[orderData[i].VegCuisine]++
+		if popularCuisines[orderData[i].VegCuisine] > popularCuisineFreq {
+			popularCuisineFreq =  popularCuisines[orderData[i].VegCuisine]
+			popularCuisineName = orderData[i].VegCuisine
+		}
 	}
+
+	fmt.Println("Most Popular Veg cuisine is %s",popularCuisineName)
 
 	return nil
 }
 
-func PopularNonVegCuisines(filePath string) error {
+func PopularNonVegCuisine(filePath string) error {
 
 	jsonFile, err := os.Open(filePath)
 
@@ -83,9 +100,20 @@ func PopularNonVegCuisines(filePath string) error {
 
 	popularCuisines := make(map[string]int)
 
+	var popularCuisineFreq int
+	var popularCuisineName string
+
 	for i := 0; i < len(orderData); i++ {
-		popularCuisines[orderData[i].NonVegCuisine]++
+		if len(orderData[i].NonVegCuisine) != 0 {
+			popularCuisines[orderData[i].NonVegCuisine]++
+			if popularCuisines[orderData[i].NonVegCuisine] > popularCuisineFreq {
+			popularCuisineFreq = popularCuisines[orderData[i].NonVegCuisine]
+			popularCuisineName = orderData[i].NonVegCuisine
+			}
+		}
 	}
+
+	fmt.Println("Most Popular Non-Veg Cuisine is %s",popularCuisineName)
 
 	return nil
 }
