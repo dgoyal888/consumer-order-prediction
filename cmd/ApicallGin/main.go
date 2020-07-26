@@ -53,7 +53,9 @@ func PostOrder(c *gin.Context){
 func main(){
 	router := gin.Default()
 
-	api:= router.Group("/api")
+	api:= router.Group("/api",gin.BasicAuth(gin.Accounts{
+		"team1": "team1",
+	}))
 	// http://localhost:5656/api/
 	api.GET("/",  HomePage)
 	api.GET("/getpopularrestaurant", GetPoplarRestaurant)
