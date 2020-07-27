@@ -1,0 +1,22 @@
+syntax="proto3";
+
+
+package orders;
+
+
+option go_package="pkg/proto/orders";
+
+
+message GetPopularRestaurantRequest {
+}
+
+
+message GetPopularRestaurantResponse {
+    string name = 1;
+}
+
+
+service OrderService {
+    rpc GetPopularRestaurant(GetPopularRestaurantRequest) returns (GetPopularRestaurantResponse){}
+}
+
