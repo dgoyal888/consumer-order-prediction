@@ -123,7 +123,7 @@ func PopularNonVegCuisine(filePath string) (csv.Order,error) {
 	return ppopularVegCuisine,nil
 }
 func ReturnJsonBasedOnCUSTID(custid string) (csv.Order,error){
-	jsonFile, err := os.Open("data/orderdata.json")
+	jsonFile, err := os.Open("../../data/orderdata.json")
 	if err!=nil{
 		return csv.Order{},fmt.Errorf("Error finding file")
 	}

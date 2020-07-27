@@ -4,7 +4,6 @@ import (
 	"consumer-order-prediction/pkg/csv"
 	orderspb "consumer-order-prediction/pkg/proto/orders"
 	"context"
-	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 	"log"
@@ -71,9 +70,14 @@ func GetSpecificOrdersByQuery(c *gin.Context) {
 			"message":"customer not found",
 		})
 	}else {
-		orderJson,_ := json.Marshal(res)
-		var ginRes *csv.Order
-		_ = json.Unmarshal(orderJson, &ginRes)
+		ginRes := &csv.Order{
+			CustomerID:res.GetOrder().CustomerId,
+			CustomerName:res.GetOrder().CustomerName,
+			RestsurantName:res.GetOrder().RestsurantName,
+			VegCuisine:res.GetOrder().VegCuisine,
+			NonVegCuisine:res.GetOrder().NonvegCuisine,
+			State:res.GetOrder().State,
+		}
 		c.JSON(200,ginRes)
 	}
 }
