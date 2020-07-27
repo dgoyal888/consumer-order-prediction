@@ -6,8 +6,17 @@ package orders;
 
 option go_package="pkg/proto/orders";
 
+message Order {
+    int64 customer_id = 1;
+    string customer_name = 2;
+    string restsurant_name = 3;
+    string veg_cuisine = 4;
+    string nonveg_cuisine = 5;
+    string state = 6;
+}
 
 message GetPopularRestaurantRequest {
+    Order order = 1;
 }
 
 
@@ -15,8 +24,19 @@ message GetPopularRestaurantResponse {
     string name = 1;
 }
 
+message GetSpecificOrderRequest {
+    string order_id = 1;
+}
+
+
+message GetSpecificOrderResponse {
+    Order order = 1;
+}
+
+
 
 service OrderService {
     rpc GetPopularRestaurant(GetPopularRestaurantRequest) returns (GetPopularRestaurantResponse){}
+    rpc GetSpecificOrder(GetSpecificOrderRequest) returns (GetSpecificOrderResponse){}
 }
 

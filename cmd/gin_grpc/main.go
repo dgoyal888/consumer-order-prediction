@@ -1,8 +1,10 @@
 package main
 
 import (
+	"consumer-order-prediction/pkg/csv"
 	orderspb "consumer-order-prediction/pkg/proto/orders"
 	"context"
+	"encoding/json"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
 	"log"
@@ -40,6 +42,41 @@ func  GetPoplarRestaurant(c *gin.Context) {
 	})
 }
 
+func GetSpecificOrdersByQuery(c *gin.Context) {
+
+	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+
+	if err != nil {
+		log.Fatalf("Error While calling GreetFullName : %v", err)
+	}
+
+	defer conn.Close()
+
+	client := orderspb.NewOrderServiceClient(conn)
+
+	customerid := c.Query("CustomerID")
+
+	req := &orderspb.GetSpecificOrderRequest{
+		OrderId:customerid,
+	}
+
+	res, err := client.GetSpecificOrder(context.Background(), req)
+
+	if err != nil {
+		log.Fatalf("Error While calling GreetFullName : %v", err)
+	}
+
+	if err!=nil{
+		c.JSON(200, gin.H{
+			"message":"customer not found",
+		})
+	}else {
+		orderJson,_ := json.Marshal(res)
+		var ginRes *csv.Order
+		_ = json.Unmarshal(orderJson, &ginRes)
+		c.JSON(200,ginRes)
+	}
+}
 
 func main(){
 	router := gin.Default()
@@ -50,6 +87,7 @@ func main(){
 	// http://localhost:5656/api/
 	api.GET("/",  HomePage)
 	api.GET("/getpopularrestaurant", GetPoplarRestaurant)
+	api.GET("/orders", GetSpecificOrdersByQuery)
 
 	router.Run("localhost:5656")
 }

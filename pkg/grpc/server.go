@@ -1,7 +1,6 @@
 package main
 
 import (
-	"consumer-order-prediction/pkg/csv"
 	"consumer-order-prediction/pkg/rules"
 	"context"
 	"fmt"
@@ -18,7 +17,7 @@ type server struct{}
 
 func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
 
-	csvData, err := csv.ReadCSVData("data/orderdata.csv")
+	/*csvData, err := csv.ReadCSVData("data/orderdata.csv")
 
 	if err != nil {
 		fmt.Println("Error while reading CSV data: %s",err.Error())
@@ -28,7 +27,7 @@ func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopu
 
 	if err != nil {
 		fmt.Println("Error while converting  CSV to Json data: %s",err.Error())
-	}
+	}*/
 
 	restaurant,err := rules.PopularRestaurant("data/orderdata.json")
 
@@ -42,6 +41,28 @@ func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopu
 		Name: restaurant.RestsurantName,
 	}
 
+
+	return res,nil
+}
+
+func (s *server) GetSpecificOrder(ctx context.Context, req *orderspb.GetSpecificOrderRequest) (*orderspb.GetSpecificOrderResponse, error) {
+
+	order, err := rules.ReturnJsonBasedOnCUSTID(req.OrderId)
+
+	if err != nil {
+		fmt.Println("error from rules %v",err)
+	}
+
+	res := &orderspb.GetSpecificOrderResponse{
+		Order: &orderspb.Order{
+			CustomerId: order.CustomerID,
+			CustomerName: order.CustomerName,
+			RestsurantName:order.RestsurantName,
+			VegCuisine:order.VegCuisine,
+			NonvegCuisine:order.NonVegCuisine,
+			State:order.State,
+		},
+	}
 
 	return res,nil
 }
