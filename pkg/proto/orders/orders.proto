@@ -16,7 +16,6 @@ message Order {
 }
 
 message GetPopularRestaurantRequest {
-    Order order = 1;
 }
 
 
@@ -32,7 +31,6 @@ message GetSpecificOrderRequest {
 message GetSpecificOrderResponse {
     Order order = 1;
 }
-
 
 
 service OrderService {
