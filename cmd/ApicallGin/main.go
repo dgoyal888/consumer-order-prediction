@@ -17,7 +17,7 @@ func HomePage(c *gin.Context) {
 }
 
 func  GetPoplarRestaurant(c *gin.Context)  {
-	restaurant,_:=rules.PopularRestaurant("data/orderdata.json")
+	restaurant,_:=rules.PopularRestaurant("../../data/orderdata.json")
 	c.JSON(200,gin.H{
 		"Most Popular Restaurant":restaurant.RestsurantName,
 	})
