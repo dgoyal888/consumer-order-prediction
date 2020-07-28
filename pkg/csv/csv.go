@@ -16,6 +16,7 @@ type Order struct {
 	State string `json:",omitempty"`
 }
 
+//Return slice of Order by reading from orderdata.csv file
 func ReadCSVData(filePath string) ([]Order,error){
 
 	csvfile, err := os.Open(filePath)
@@ -46,6 +47,7 @@ func ReadCSVData(filePath string) ([]Order,error){
 	return csvDataSlice,nil
 }
 
+//Convert Order slice to json and write it file orderdata.json
 func CSVToJSON(csvData []Order) error {
 
 	jsonData, err := json.MarshalIndent(csvData,"","    ")

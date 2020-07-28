@@ -14,5 +14,13 @@
         "VegCuisine": "Nan",
         "NonVegCuisine": "Pina Colada Pork Ribs",
         "State": "Oklahoma"
+    },
+    {
+        "CustomerID": 184,
+        "CustomerName": "Garik Bramah",
+        "RestsurantName": "Blind chemistry",
+        "VegCuisine": "Nan",
+        "NonVegCuisine": "Pina Colada Pork Ribs",
+        "State": "Oklahoma"
     }
 ]

@@ -10,6 +10,8 @@ import (
 	"consumer-order-prediction/pkg/csv"
 )
 
+
+//Return popular restaurant on the basis of frequency of orders
 func PopularRestaurant(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
@@ -46,6 +48,8 @@ func PopularRestaurant(filePath string) (csv.Order,error) {
 	return popularrestaurantobject,nil
 }
 
+
+//Returns popular veg cuisine on the basis of frequency of orders
 func PopularVegCuisine(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
@@ -83,6 +87,8 @@ func PopularVegCuisine(filePath string) (csv.Order,error) {
 	return popularvegcuisineobject,nil
 }
 
+
+//Returns popular non-veg cuisine on the basis of frequency of orders
 func PopularNonVegCuisine(filePath string) (csv.Order,error) {
 
 	jsonFile, err := os.Open(filePath)
@@ -122,6 +128,8 @@ func PopularNonVegCuisine(filePath string) (csv.Order,error) {
 
 	return ppopularVegCuisine,nil
 }
+
+//Return data of a particular order on the basis of customerid
 func ReturnJsonBasedOnCUSTID(custid string) (csv.Order,error){
 	jsonFile, err := os.Open("../../data/orderdata.json")
 	if err!=nil{
@@ -143,8 +151,10 @@ func ReturnJsonBasedOnCUSTID(custid string) (csv.Order,error){
 	return csv.Order{},fmt.Errorf("Error finding id")
 }
 
+
+//Append post data of an order to orderdataapi.json file
 func Appendtofile(order *csv.Order) error{
-	jsonFile, err := os.Open("data/orderdataapi.json")
+	jsonFile, err := os.Open("../../data/orderdataapi.json")
 	if err != nil {
 		return err
 	}
@@ -163,7 +173,7 @@ func Appendtofile(order *csv.Order) error{
 	if err != nil {
 		return err
 	}
-	jsonFile, err= os.Create("data/orderdataapi.json")
+	jsonFile, err= os.Create("../../data/orderdataapi.json")
 
 	if err != nil {
 		return err

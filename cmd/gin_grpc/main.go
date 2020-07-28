@@ -15,6 +15,7 @@ func HomePage(c *gin.Context) {
 	})
 }
 
+//Return most popular restaurant with the help of grpc
 func  GetPoplarRestaurant(c *gin.Context) {
 
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
@@ -41,6 +42,8 @@ func  GetPoplarRestaurant(c *gin.Context) {
 	})
 }
 
+
+//Return a specific order on the basis of customer id with the help of gRPC
 func GetSpecificOrdersByQuery(c *gin.Context) {
 
 	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())

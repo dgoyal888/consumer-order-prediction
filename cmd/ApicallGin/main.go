@@ -16,6 +16,8 @@ func HomePage(c *gin.Context) {
 	})
 }
 
+
+//Return most popular restaurant.
 func  GetPoplarRestaurant(c *gin.Context)  {
 	restaurant,_:=rules.PopularRestaurant("../../data/orderdata.json")
 	c.JSON(200,gin.H{
@@ -23,6 +25,7 @@ func  GetPoplarRestaurant(c *gin.Context)  {
 	})
 }
 
+//Return a specific order on the basis of customer id.
 func GetSpecificOrdersByQuery(c *gin.Context) {
 
 	customerid := c.Query("CustomerID")
@@ -35,6 +38,8 @@ func GetSpecificOrdersByQuery(c *gin.Context) {
 		c.JSON(200,&order)
 	}
 }
+
+//Add an order in orderdataapi.json file
 func PostOrder(c *gin.Context){
 	body := c.Request.Body
 
@@ -50,6 +55,8 @@ func PostOrder(c *gin.Context){
 		"message" :string(content),
 	})
 }
+
+
 func main(){
 	router := gin.Default()
 

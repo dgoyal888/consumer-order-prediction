@@ -15,6 +15,7 @@ import (
 type server struct{}
 
 
+// Function implementation for rpc GetPopularRestaurant
 func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
 
 	restaurant,err := rules.PopularRestaurant("../../data/orderdata.json")
@@ -30,6 +31,8 @@ func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopu
 	return res,nil
 }
 
+
+//Function implementation for rpc GetSpecificOrder
 func (s *server) GetSpecificOrder(ctx context.Context, req *orderspb.GetSpecificOrderRequest) (*orderspb.GetSpecificOrderResponse, error) {
 
 	order, err := rules.ReturnJsonBasedOnCUSTID(req.OrderId)
