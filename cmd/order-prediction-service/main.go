@@ -1,7 +1,7 @@
 package main
 
 import (
-	"consumer-order-prediction/pkg/csv"
+	"github.com/consumer-order-prediction/pkg/csv"
 	"github.com/consumer-order-prediction/pkg/rules"
 	"fmt"
 )

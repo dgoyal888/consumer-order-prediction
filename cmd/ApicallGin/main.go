@@ -1,8 +1,8 @@
 package main
 
 import (
-	"consumer-order-prediction/pkg/csv"
-	"consumer-order-prediction/pkg/rules"
+	"github.com/consumer-order-prediction/pkg/csv"
+	"github.com/consumer-order-prediction/pkg/rules"
 	"encoding/json"
 	"fmt"
 	"github.com/gin-gonic/gin"
