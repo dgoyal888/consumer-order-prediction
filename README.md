@@ -10,7 +10,7 @@ To run this project, follow the steps below :
 5. In another terminal go to cmd/gin_grpc and run “go run main.go”
 6. After this the API will run on localhost:5656
 
-To Fetch Different queries try :
+To fetch different queries try :
 1. “Localhost:5656/” for homepage
 2. “Localhost:5656/popularrestaurant” to get popular restaurant
 3. “Localhost:5656/order” to place a new order
