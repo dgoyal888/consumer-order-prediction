@@ -119,8 +119,8 @@ func main(){
 	}))
 	// http://localhost:5656/api/
 	api.GET("/",  HomePage)
-	api.GET("/getpopularrestaurant", GetPoplarRestaurant)
-	api.GET("/getpopularcuisine", GetPopularVegCuisine)
+	api.GET("/popularrestaurant", GetPoplarRestaurant)
+	api.GET("/popularcuisine", GetPopularVegCuisine)
 	api.GET("/orders", GetSpecificOrdersByQuery)
 
 	router.Run("localhost:5656")

@@ -25,6 +25,13 @@ func  GetPoplarRestaurant(c *gin.Context)  {
 	})
 }
 
+func  GetPopularCuisine(c *gin.Context)  {
+	restaurant,_:=rules.PopularVegCuisine("../../data/orderdata.json")
+	c.JSON(200,gin.H{
+		"Most Popular Cuisine is":restaurant.VegCuisine,
+	})
+}
+
 //Return a specific order on the basis of customer id.
 func GetSpecificOrdersByQuery(c *gin.Context) {
 
@@ -65,7 +72,8 @@ func main(){
 	}))
 	// http://localhost:5656/api/
 	api.GET("/",  HomePage)
-	api.GET("/getpopularrestaurant", GetPoplarRestaurant)
+	api.GET("/popularrestaurant", GetPoplarRestaurant)
+	api.GET("/popularcuisine", GetPopularCuisine)
 	api.GET("/orders", GetSpecificOrdersByQuery)
 	api.POST("/order", PostOrder)
 	router.Run("localhost:5656")
