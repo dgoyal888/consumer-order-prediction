@@ -7,7 +7,7 @@ import (
 	"os"
 	"strconv"
 
-	"consumer-order-prediction/pkg/csv"
+	"github.com/consumer-order-prediction/pkg/csv"
 )
 
 
