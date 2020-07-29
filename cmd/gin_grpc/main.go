@@ -1,8 +1,8 @@
 package main
 
 import (
-	"consumer-order-prediction/pkg/csv"
-	orderspb "consumer-order-prediction/pkg/proto/orders"
+	"github.com/consumer-order-prediction/pkg/csv"
+	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
 	"context"
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
@@ -39,6 +39,32 @@ func  GetPoplarRestaurant(c *gin.Context) {
 
 	c.JSON(200, gin.H{
 		"Most Popular Restaurant": res.Name,
+	})
+}
+
+func  GetPopularVegCuisine(c *gin.Context) {
+
+	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+
+	if err != nil {
+		log.Fatalf("Error While calling GreetFullName : %v", err)
+	}
+
+	defer conn.Close()
+
+	client := orderspb.NewOrderServiceClient(conn)
+
+	req := &orderspb.GetPopularVegCuisineRequest{
+	}
+
+	res, err := client.GetPopularVegCuisine(context.Background(), req)
+
+	if err != nil {
+		log.Fatalf("Error While calling GreetFullName : %v", err)
+	}
+
+	c.JSON(200, gin.H{
+		"Most Popular Veg Cuisine is": res.Name,
 	})
 }
 
@@ -94,6 +120,7 @@ func main(){
 	// http://localhost:5656/api/
 	api.GET("/",  HomePage)
 	api.GET("/getpopularrestaurant", GetPoplarRestaurant)
+	api.GET("/getpopularcuisine", GetPopularVegCuisine)
 	api.GET("/orders", GetSpecificOrdersByQuery)
 
 	router.Run("localhost:5656")

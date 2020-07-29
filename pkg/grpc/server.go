@@ -1,13 +1,13 @@
 package main
 
 import (
-	"consumer-order-prediction/pkg/rules"
+	"github.com/consumer-order-prediction/pkg/rules"
 	"context"
 	"fmt"
 	"log"
 	"net"
 
-	orderspb "consumer-order-prediction/pkg/proto/orders"
+	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
 	"google.golang.org/grpc"
 )
 
@@ -26,6 +26,21 @@ func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopu
 
 	res := &orderspb.GetPopularRestaurantResponse{
 		Name: restaurant.RestsurantName,
+	}
+
+	return res,nil
+}
+
+func (s *server) GetPopularVegCuisine(ctx context.Context, req *orderspb.GetPopularVegCuisineRequest) (*orderspb.GetPopularVegCuisineResponse, error) {
+
+	cuisine,err := rules.PopularVegCuisine("../../data/orderdata.json")
+
+	if err != nil {
+		fmt.Println("error from rules %v",err)
+	}
+
+	res := &orderspb.GetPopularVegCuisineResponse{
+		Name: cuisine.VegCuisine,
 	}
 
 	return res,nil

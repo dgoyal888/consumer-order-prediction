@@ -18,7 +18,7 @@ type Order struct {
 
 //Return slice of Order by reading from orderdata.csv file
 func ReadCSVData(filePath string) ([]Order,error){
-
+	//fmt.Println("hiiii")
 	csvfile, err := os.Open(filePath)
 
 	if err != nil {

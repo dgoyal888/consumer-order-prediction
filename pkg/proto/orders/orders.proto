@@ -32,9 +32,17 @@ message GetSpecificOrderResponse {
     Order order = 1;
 }
 
+message GetPopularVegCuisineRequest {
+
+}
+
+message GetPopularVegCuisineResponse {
+    string name = 1;
+}
 
 service OrderService {
     rpc GetPopularRestaurant(GetPopularRestaurantRequest) returns (GetPopularRestaurantResponse){}
+    rpc GetPopularVegCuisine(GetPopularVegCuisineRequest) returns (GetPopularVegCuisineResponse){}
     rpc GetSpecificOrder(GetSpecificOrderRequest) returns (GetSpecificOrderResponse){}
 }
 
