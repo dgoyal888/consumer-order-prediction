@@ -11,7 +11,7 @@ To run this project, follow the steps below :
 6. After this the API will run on localhost:5656
 
 To Fetch Different queries try :
-	1. “Localhost:5656/” for homepage
-	2. “Localhost:5656/popularrestaurant” to get popular restaurant
-	3. “Localhost:5656/order” to place a new order
-	4. “Localhost:5656/popularcuisine”  to check the most popular cuisine
+1. “Localhost:5656/” for homepage
+2. “Localhost:5656/popularrestaurant” to get popular restaurant
+3. “Localhost:5656/order” to place a new order
+4. “Localhost:5656/popularcuisine”  to check the most popular cuisine
