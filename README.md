@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # consumer-order-prediction
 repo for case study 1
  
