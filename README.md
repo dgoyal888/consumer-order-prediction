@@ -25,7 +25,9 @@ repo for case study 1
 ![Screenshot](data/GRPC_incorporation.png)
 
  
-
+### Libraries Required 
+1. To install GIN, use : go get -u "github.com/gin-gonic/gin"
+2. To install gRPC, use : go get -u "google.golang.org/grpc"
  
 ### To run this project, follow the below steps :-
 1. Clone the repository
