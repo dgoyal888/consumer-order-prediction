@@ -1,0 +1,47 @@
+syntax="proto3";
+
+
+package customer;
+
+
+option go_package="pkg/proto/customer";
+
+message Customer {
+    string first_name = 1;
+    string second_name = 2;
+    string address = 3;
+}
+
+message AddCustomerRequest {
+    Customer customer = 1;
+}
+
+message AddCustomerResponse {
+    string response = 1;
+}
+
+
+message GetAllCustomerRequest {
+
+}
+
+message GetAllCustomerResponse {
+    repeated Customer customers = 1;
+}
+
+message GetSpecificCustomerRequest {
+    int64 customer_id = 1;
+}
+
+message GetSpecificCustomerResponse {
+    Customer customer = 1;
+}
+
+
+
+service CustomerService {
+    rpc AddCustomer(AddCustomerRequest) returns (AddCustomerResponse){}
+    rpc GetAllCustomer(GetAllCustomerRequest) returns (GetAllCustomerResponse){}
+    rpc GetSpecificCustomer(GetSpecificCustomerRequest) returns (GetSpecificCustomerResponse){}
+}
+
