@@ -7,13 +7,16 @@ package restaurant;
 option go_package="pkg/proto/restaurant";
 
 message Item {
-    string name = 1;
-    float price = 2;
+    string item_id = 1;
+    string name = 2;
+    float price = 3;
 }
 
 message Restaurant {
-    string name = 1;
-    repeated Item items = 2;
+    string restaurant_id = 1;
+    string name = 2;
+    string address = 3;
+    repeated Item items = 4;
 }
 
 
@@ -34,7 +37,7 @@ message GetAllRestaurantResponse {
 }
 
 message GetSpecificRestaurantRequest {
-    int64 restaurant_id = 1;
+    string restaurant_id = 1;
 }
 
 message GetSpecificRestaurantResponse {
@@ -42,9 +45,9 @@ message GetSpecificRestaurantResponse {
 }
 
 message AddRestaurantItemRequest {
-    int64 restaurant_id = 1;
+    string restaurant_id = 1;
     string item_name = 2;
-    string price = 3;
+    float price = 3;
 }
 
 message AddRestaurantItemResponse {
@@ -52,10 +55,10 @@ message AddRestaurantItemResponse {
 }
 
 message UpdateRestaurantItemRequest {
-    int64 restaurant_id = 1;
-    int64 item_id = 2;
+    string restaurant_id = 1;
+    string item_id = 2;
     string item_name = 3;
-    string price = 4;
+    float price = 4;
 }
 
 message UpdateRestaurantItemResponse {
@@ -63,9 +66,8 @@ message UpdateRestaurantItemResponse {
 }
 
 message DeleteItemRequest {
-    int64 restaurant_id = 1;
-    int64 item_id = 2;
-
+    string restaurant_id = 1;
+    string item_id = 2;
 }
 
 message DeleteItemResponse {
@@ -73,7 +75,7 @@ message DeleteItemResponse {
 }
 
 message GetAllItemsRequest {
-    int64 restaurant_id = 1;
+    string restaurant_id = 1;
 }
 
 message GetAllItemsResponse {
@@ -81,8 +83,8 @@ message GetAllItemsResponse {
 }
 
 message GetSpecificItemRequest {
-    int64 restaurant_id = 1;
-    int64 item_id = 2;
+    string restaurant_id = 1;
+    string item_id = 2;
 }
 
 message GetSpecificItemResponse {

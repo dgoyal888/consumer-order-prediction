@@ -10,6 +10,7 @@ message Customer {
     string first_name = 1;
     string second_name = 2;
     string address = 3;
+    string customer_id = 4;
 }
 
 message AddCustomerRequest {

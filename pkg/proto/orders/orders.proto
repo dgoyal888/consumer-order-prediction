@@ -6,19 +6,19 @@ package orders;
 
 option go_package="pkg/proto/orders";
 
-message Order {
-    int64 customer_id = 1;
-    int64 restaurant_id = 2;
-    int64 item_id = 3;
-    float discount = 4;
-    float price = 5;
+message Item {
+    string item_id = 1;
+    string name = 2;
+    float cost = 3;
+    int64 quantity = 4;
 }
 
-message OrderDetails {
-    string restaurant_name = 1;
-    string item_name = 2;
-    float discount = 3;
-    float price = 4;
+message Order {
+    string customer_id = 1;
+    string order_id = 2;
+    string restaurant_id = 3;
+    repeated Item items = 4;
+    float discount = 5;
 }
 
 message PlaceOrderRequest {
@@ -30,8 +30,7 @@ message PlaceOrderResponse {
 }
 
 message UpdateOrderRequest {
-    int64 order_id = 1;
-    Order order = 2;
+    Order order = 1;
 }
 
 message UpdateOrderResponse {
@@ -44,7 +43,7 @@ message GetSpecificOrderRequest {
 }
 
 message GetSpecificOrderResponse {
-    OrderDetails order = 1;
+    Order order = 1;
 }
 
 
@@ -59,7 +58,7 @@ message DeleteOrderResponse {
 
 service OrderService {
     rpc PlaceOrder(PlaceOrderRequest) returns (PlaceOrderResponse){}
-    //rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse){} ---> orderId in request
+    rpc UpdateOrder(UpdateOrderRequest) returns (UpdateOrderResponse){}
     rpc GetSpecificOrder(GetSpecificOrderRequest) returns (GetSpecificOrderResponse){}
     rpc DeleteOrder(DeleteOrderRequest) returns (DeleteOrderResponse){}
 }
