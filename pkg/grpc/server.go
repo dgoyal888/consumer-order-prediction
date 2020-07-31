@@ -7,10 +7,11 @@ import (
 	"log"
 	"net"
 
-	"github.com/consumer-order-prediction/service"
-	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
+	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
+	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
 	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
+	"github.com/consumer-order-prediction/service"
 	"google.golang.org/grpc"
 )
 
@@ -81,6 +82,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+
+	dynamodb.NewClient()
 
 	s := grpc.NewServer()
 
