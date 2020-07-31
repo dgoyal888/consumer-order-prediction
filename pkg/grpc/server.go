@@ -1,22 +1,25 @@
 package main
 
 import (
-	"github.com/consumer-order-prediction/pkg/rules"
-	"context"
-	"fmt"
+	//"github.com/consumer-order-prediction/pkg/rules"
+	//"context"
+	//"fmt"
 	"log"
 	"net"
 
+	"github.com/consumer-order-prediction/service"
 	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
+	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
+	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
 	"google.golang.org/grpc"
 )
 
 
-type server struct{}
+//type server struct{}
 
 
 // Function implementation for rpc GetPopularRestaurant
-func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
+/*func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
 
 	restaurant,err := rules.PopularRestaurant("../../data/orderdata.json")
 
@@ -69,7 +72,7 @@ func (s *server) GetSpecificOrder(ctx context.Context, req *orderspb.GetSpecific
 
 	return res,nil
 }
-
+*/
 
 func main() {
 
@@ -81,7 +84,10 @@ func main() {
 
 	s := grpc.NewServer()
 
-	orderspb.RegisterOrderServiceServer(s, &server{})
+	customerpb.RegisterCustomerServiceServer(s, &service.Service{})
+	orderspb.RegisterOrderServiceServer(s, &service.Service{})
+	restaurantpb.RegisterRestaurantServiceServer(s, &service.Service{})
+
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)

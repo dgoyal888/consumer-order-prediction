@@ -1026,57 +1026,58 @@ var file_pkg_proto_restaurant_restaurant_proto_rawDesc = []byte{
 	0x66, 0x69, 0x63, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
 	0x24, 0x0a, 0x04, 0x69, 0x74, 0x65, 0x6d, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x10, 0x2e,
 	0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x49, 0x74, 0x65, 0x6d, 0x52,
-	0x04, 0x69, 0x74, 0x65, 0x6d, 0x32, 0x87, 0x06, 0x0a, 0x0c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x53,
-	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x56, 0x0a, 0x0d, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73,
-	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x12, 0x20, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75,
-	0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61,
-	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x72, 0x65, 0x73, 0x74,
-	0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75,
-	0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5f,
-	0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61,
-	0x6e, 0x74, 0x12, 0x23, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e,
-	0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75,
+	0x04, 0x69, 0x74, 0x65, 0x6d, 0x32, 0x8c, 0x06, 0x0a, 0x11, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75,
+	0x72, 0x61, 0x6e, 0x74, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x56, 0x0a, 0x0d, 0x41,
+	0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x12, 0x20, 0x2e, 0x72,
+	0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73,
+	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21,
+	0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52,
+	0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x5f, 0x0a, 0x10, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x65, 0x73,
+	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x12, 0x23, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75,
 	0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x52, 0x65, 0x73, 0x74, 0x61,
-	0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x6e, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x63, 0x52, 0x65,
-	0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x12, 0x28, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61,
-	0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69,
-	0x63, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x29, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e,
-	0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x63, 0x52, 0x65, 0x73, 0x74, 0x61,
-	0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x62, 0x0a, 0x11, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
-	0x49, 0x74, 0x65, 0x6d, 0x12, 0x24, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e,
-	0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49,
-	0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x72, 0x65, 0x73,
-	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61,
-	0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x6b, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
-	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x27, 0x2e, 0x72, 0x65,
-	0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52,
-	0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e,
-	0x74, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61,
-	0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x4d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x1d,
-	0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x44, 0x65, 0x6c, 0x65,
-	0x74, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1e, 0x2e,
-	0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74,
-	0x65, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x50, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x12, 0x1e,
-	0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x41,
-	0x6c, 0x6c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1f,
-	0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x41,
-	0x6c, 0x6c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
-	0x00, 0x12, 0x5c, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x63,
-	0x49, 0x74, 0x65, 0x6d, 0x12, 0x22, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e,
-	0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x63, 0x49, 0x74, 0x65,
-	0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61,
-	0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69,
-	0x63, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x16, 0x5a, 0x14, 0x70, 0x6b, 0x67, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x72, 0x65, 0x73,
-	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x24, 0x2e, 0x72,
+	0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c,
+	0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x6e, 0x0a, 0x15, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69,
+	0x66, 0x69, 0x63, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x12, 0x28, 0x2e,
+	0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70,
+	0x65, 0x63, 0x69, 0x66, 0x69, 0x63, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x29, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75,
+	0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66, 0x69, 0x63,
+	0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x62, 0x0a, 0x11, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61,
+	0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x24, 0x2e, 0x72, 0x65, 0x73, 0x74,
+	0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75,
+	0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x25, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x41, 0x64, 0x64,
+	0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x6b, 0x0a, 0x14, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d,
+	0x12, 0x27, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74,
+	0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x28, 0x2e, 0x72, 0x65, 0x73, 0x74,
+	0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73,
+	0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4d, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49,
+	0x74, 0x65, 0x6d, 0x12, 0x1d, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
+	0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x1e, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e,
+	0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x50, 0x0a, 0x0b, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x49, 0x74,
+	0x65, 0x6d, 0x73, 0x12, 0x1e, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
+	0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x1f, 0x2e, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74,
+	0x2e, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x49, 0x74, 0x65, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5c, 0x0a, 0x0f, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65,
+	0x63, 0x69, 0x66, 0x69, 0x63, 0x49, 0x74, 0x65, 0x6d, 0x12, 0x22, 0x2e, 0x72, 0x65, 0x73, 0x74,
+	0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70, 0x65, 0x63, 0x69, 0x66,
+	0x69, 0x63, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e,
+	0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x2e, 0x47, 0x65, 0x74, 0x53, 0x70,
+	0x65, 0x63, 0x69, 0x66, 0x69, 0x63, 0x49, 0x74, 0x65, 0x6d, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x42, 0x16, 0x5a, 0x14, 0x70, 0x6b, 0x67, 0x2f, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x2f, 0x72, 0x65, 0x73, 0x74, 0x61, 0x75, 0x72, 0x61, 0x6e, 0x74, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1119,22 +1120,22 @@ var file_pkg_proto_restaurant_restaurant_proto_depIdxs = []int32{
 	1,  // 3: restaurant.GetSpecificRestaurantResponse.restaurant:type_name -> restaurant.Restaurant
 	0,  // 4: restaurant.GetAllItemsResponse.items:type_name -> restaurant.Item
 	0,  // 5: restaurant.GetSpecificItemResponse.item:type_name -> restaurant.Item
-	2,  // 6: restaurant.OrderService.AddRestaurant:input_type -> restaurant.AddRestaurantRequest
-	4,  // 7: restaurant.OrderService.GetAllRestaurant:input_type -> restaurant.GetAllRestaurantRequest
-	6,  // 8: restaurant.OrderService.GetSpecificRestaurant:input_type -> restaurant.GetSpecificRestaurantRequest
-	8,  // 9: restaurant.OrderService.AddRestaurantItem:input_type -> restaurant.AddRestaurantItemRequest
-	10, // 10: restaurant.OrderService.UpdateRestaurantItem:input_type -> restaurant.UpdateRestaurantItemRequest
-	12, // 11: restaurant.OrderService.DeleteItem:input_type -> restaurant.DeleteItemRequest
-	14, // 12: restaurant.OrderService.GetAllItems:input_type -> restaurant.GetAllItemsRequest
-	16, // 13: restaurant.OrderService.GetSpecificItem:input_type -> restaurant.GetSpecificItemRequest
-	3,  // 14: restaurant.OrderService.AddRestaurant:output_type -> restaurant.AddRestaurantResponse
-	5,  // 15: restaurant.OrderService.GetAllRestaurant:output_type -> restaurant.GetAllRestaurantResponse
-	7,  // 16: restaurant.OrderService.GetSpecificRestaurant:output_type -> restaurant.GetSpecificRestaurantResponse
-	9,  // 17: restaurant.OrderService.AddRestaurantItem:output_type -> restaurant.AddRestaurantItemResponse
-	11, // 18: restaurant.OrderService.UpdateRestaurantItem:output_type -> restaurant.UpdateRestaurantItemResponse
-	13, // 19: restaurant.OrderService.DeleteItem:output_type -> restaurant.DeleteItemResponse
-	15, // 20: restaurant.OrderService.GetAllItems:output_type -> restaurant.GetAllItemsResponse
-	17, // 21: restaurant.OrderService.GetSpecificItem:output_type -> restaurant.GetSpecificItemResponse
+	2,  // 6: restaurant.RestaurantService.AddRestaurant:input_type -> restaurant.AddRestaurantRequest
+	4,  // 7: restaurant.RestaurantService.GetAllRestaurant:input_type -> restaurant.GetAllRestaurantRequest
+	6,  // 8: restaurant.RestaurantService.GetSpecificRestaurant:input_type -> restaurant.GetSpecificRestaurantRequest
+	8,  // 9: restaurant.RestaurantService.AddRestaurantItem:input_type -> restaurant.AddRestaurantItemRequest
+	10, // 10: restaurant.RestaurantService.UpdateRestaurantItem:input_type -> restaurant.UpdateRestaurantItemRequest
+	12, // 11: restaurant.RestaurantService.DeleteItem:input_type -> restaurant.DeleteItemRequest
+	14, // 12: restaurant.RestaurantService.GetAllItems:input_type -> restaurant.GetAllItemsRequest
+	16, // 13: restaurant.RestaurantService.GetSpecificItem:input_type -> restaurant.GetSpecificItemRequest
+	3,  // 14: restaurant.RestaurantService.AddRestaurant:output_type -> restaurant.AddRestaurantResponse
+	5,  // 15: restaurant.RestaurantService.GetAllRestaurant:output_type -> restaurant.GetAllRestaurantResponse
+	7,  // 16: restaurant.RestaurantService.GetSpecificRestaurant:output_type -> restaurant.GetSpecificRestaurantResponse
+	9,  // 17: restaurant.RestaurantService.AddRestaurantItem:output_type -> restaurant.AddRestaurantItemResponse
+	11, // 18: restaurant.RestaurantService.UpdateRestaurantItem:output_type -> restaurant.UpdateRestaurantItemResponse
+	13, // 19: restaurant.RestaurantService.DeleteItem:output_type -> restaurant.DeleteItemResponse
+	15, // 20: restaurant.RestaurantService.GetAllItems:output_type -> restaurant.GetAllItemsResponse
+	17, // 21: restaurant.RestaurantService.GetSpecificItem:output_type -> restaurant.GetSpecificItemResponse
 	14, // [14:22] is the sub-list for method output_type
 	6,  // [6:14] is the sub-list for method input_type
 	6,  // [6:6] is the sub-list for extension type_name
@@ -1393,10 +1394,10 @@ var _ grpc.ClientConnInterface
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion6
 
-// OrderServiceClient is the client API for OrderService service.
+// RestaurantServiceClient is the client API for RestaurantService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type OrderServiceClient interface {
+type RestaurantServiceClient interface {
 	AddRestaurant(ctx context.Context, in *AddRestaurantRequest, opts ...grpc.CallOption) (*AddRestaurantResponse, error)
 	GetAllRestaurant(ctx context.Context, in *GetAllRestaurantRequest, opts ...grpc.CallOption) (*GetAllRestaurantResponse, error)
 	GetSpecificRestaurant(ctx context.Context, in *GetSpecificRestaurantRequest, opts ...grpc.CallOption) (*GetSpecificRestaurantResponse, error)
@@ -1407,88 +1408,88 @@ type OrderServiceClient interface {
 	GetSpecificItem(ctx context.Context, in *GetSpecificItemRequest, opts ...grpc.CallOption) (*GetSpecificItemResponse, error)
 }
 
-type orderServiceClient struct {
+type restaurantServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOrderServiceClient(cc grpc.ClientConnInterface) OrderServiceClient {
-	return &orderServiceClient{cc}
+func NewRestaurantServiceClient(cc grpc.ClientConnInterface) RestaurantServiceClient {
+	return &restaurantServiceClient{cc}
 }
 
-func (c *orderServiceClient) AddRestaurant(ctx context.Context, in *AddRestaurantRequest, opts ...grpc.CallOption) (*AddRestaurantResponse, error) {
+func (c *restaurantServiceClient) AddRestaurant(ctx context.Context, in *AddRestaurantRequest, opts ...grpc.CallOption) (*AddRestaurantResponse, error) {
 	out := new(AddRestaurantResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/AddRestaurant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/AddRestaurant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) GetAllRestaurant(ctx context.Context, in *GetAllRestaurantRequest, opts ...grpc.CallOption) (*GetAllRestaurantResponse, error) {
+func (c *restaurantServiceClient) GetAllRestaurant(ctx context.Context, in *GetAllRestaurantRequest, opts ...grpc.CallOption) (*GetAllRestaurantResponse, error) {
 	out := new(GetAllRestaurantResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/GetAllRestaurant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/GetAllRestaurant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) GetSpecificRestaurant(ctx context.Context, in *GetSpecificRestaurantRequest, opts ...grpc.CallOption) (*GetSpecificRestaurantResponse, error) {
+func (c *restaurantServiceClient) GetSpecificRestaurant(ctx context.Context, in *GetSpecificRestaurantRequest, opts ...grpc.CallOption) (*GetSpecificRestaurantResponse, error) {
 	out := new(GetSpecificRestaurantResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/GetSpecificRestaurant", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/GetSpecificRestaurant", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) AddRestaurantItem(ctx context.Context, in *AddRestaurantItemRequest, opts ...grpc.CallOption) (*AddRestaurantItemResponse, error) {
+func (c *restaurantServiceClient) AddRestaurantItem(ctx context.Context, in *AddRestaurantItemRequest, opts ...grpc.CallOption) (*AddRestaurantItemResponse, error) {
 	out := new(AddRestaurantItemResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/AddRestaurantItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/AddRestaurantItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) UpdateRestaurantItem(ctx context.Context, in *UpdateRestaurantItemRequest, opts ...grpc.CallOption) (*UpdateRestaurantItemResponse, error) {
+func (c *restaurantServiceClient) UpdateRestaurantItem(ctx context.Context, in *UpdateRestaurantItemRequest, opts ...grpc.CallOption) (*UpdateRestaurantItemResponse, error) {
 	out := new(UpdateRestaurantItemResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/UpdateRestaurantItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/UpdateRestaurantItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) DeleteItem(ctx context.Context, in *DeleteItemRequest, opts ...grpc.CallOption) (*DeleteItemResponse, error) {
+func (c *restaurantServiceClient) DeleteItem(ctx context.Context, in *DeleteItemRequest, opts ...grpc.CallOption) (*DeleteItemResponse, error) {
 	out := new(DeleteItemResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/DeleteItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/DeleteItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) GetAllItems(ctx context.Context, in *GetAllItemsRequest, opts ...grpc.CallOption) (*GetAllItemsResponse, error) {
+func (c *restaurantServiceClient) GetAllItems(ctx context.Context, in *GetAllItemsRequest, opts ...grpc.CallOption) (*GetAllItemsResponse, error) {
 	out := new(GetAllItemsResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/GetAllItems", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/GetAllItems", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *orderServiceClient) GetSpecificItem(ctx context.Context, in *GetSpecificItemRequest, opts ...grpc.CallOption) (*GetSpecificItemResponse, error) {
+func (c *restaurantServiceClient) GetSpecificItem(ctx context.Context, in *GetSpecificItemRequest, opts ...grpc.CallOption) (*GetSpecificItemResponse, error) {
 	out := new(GetSpecificItemResponse)
-	err := c.cc.Invoke(ctx, "/restaurant.OrderService/GetSpecificItem", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restaurant.RestaurantService/GetSpecificItem", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// OrderServiceServer is the server API for OrderService service.
-type OrderServiceServer interface {
+// RestaurantServiceServer is the server API for RestaurantService service.
+type RestaurantServiceServer interface {
 	AddRestaurant(context.Context, *AddRestaurantRequest) (*AddRestaurantResponse, error)
 	GetAllRestaurant(context.Context, *GetAllRestaurantRequest) (*GetAllRestaurantResponse, error)
 	GetSpecificRestaurant(context.Context, *GetSpecificRestaurantRequest) (*GetSpecificRestaurantResponse, error)
@@ -1499,218 +1500,218 @@ type OrderServiceServer interface {
 	GetSpecificItem(context.Context, *GetSpecificItemRequest) (*GetSpecificItemResponse, error)
 }
 
-// UnimplementedOrderServiceServer can be embedded to have forward compatible implementations.
-type UnimplementedOrderServiceServer struct {
+// UnimplementedRestaurantServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedRestaurantServiceServer struct {
 }
 
-func (*UnimplementedOrderServiceServer) AddRestaurant(context.Context, *AddRestaurantRequest) (*AddRestaurantResponse, error) {
+func (*UnimplementedRestaurantServiceServer) AddRestaurant(context.Context, *AddRestaurantRequest) (*AddRestaurantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddRestaurant not implemented")
 }
-func (*UnimplementedOrderServiceServer) GetAllRestaurant(context.Context, *GetAllRestaurantRequest) (*GetAllRestaurantResponse, error) {
+func (*UnimplementedRestaurantServiceServer) GetAllRestaurant(context.Context, *GetAllRestaurantRequest) (*GetAllRestaurantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllRestaurant not implemented")
 }
-func (*UnimplementedOrderServiceServer) GetSpecificRestaurant(context.Context, *GetSpecificRestaurantRequest) (*GetSpecificRestaurantResponse, error) {
+func (*UnimplementedRestaurantServiceServer) GetSpecificRestaurant(context.Context, *GetSpecificRestaurantRequest) (*GetSpecificRestaurantResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSpecificRestaurant not implemented")
 }
-func (*UnimplementedOrderServiceServer) AddRestaurantItem(context.Context, *AddRestaurantItemRequest) (*AddRestaurantItemResponse, error) {
+func (*UnimplementedRestaurantServiceServer) AddRestaurantItem(context.Context, *AddRestaurantItemRequest) (*AddRestaurantItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddRestaurantItem not implemented")
 }
-func (*UnimplementedOrderServiceServer) UpdateRestaurantItem(context.Context, *UpdateRestaurantItemRequest) (*UpdateRestaurantItemResponse, error) {
+func (*UnimplementedRestaurantServiceServer) UpdateRestaurantItem(context.Context, *UpdateRestaurantItemRequest) (*UpdateRestaurantItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateRestaurantItem not implemented")
 }
-func (*UnimplementedOrderServiceServer) DeleteItem(context.Context, *DeleteItemRequest) (*DeleteItemResponse, error) {
+func (*UnimplementedRestaurantServiceServer) DeleteItem(context.Context, *DeleteItemRequest) (*DeleteItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteItem not implemented")
 }
-func (*UnimplementedOrderServiceServer) GetAllItems(context.Context, *GetAllItemsRequest) (*GetAllItemsResponse, error) {
+func (*UnimplementedRestaurantServiceServer) GetAllItems(context.Context, *GetAllItemsRequest) (*GetAllItemsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllItems not implemented")
 }
-func (*UnimplementedOrderServiceServer) GetSpecificItem(context.Context, *GetSpecificItemRequest) (*GetSpecificItemResponse, error) {
+func (*UnimplementedRestaurantServiceServer) GetSpecificItem(context.Context, *GetSpecificItemRequest) (*GetSpecificItemResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSpecificItem not implemented")
 }
 
-func RegisterOrderServiceServer(s *grpc.Server, srv OrderServiceServer) {
-	s.RegisterService(&_OrderService_serviceDesc, srv)
+func RegisterRestaurantServiceServer(s *grpc.Server, srv RestaurantServiceServer) {
+	s.RegisterService(&_RestaurantService_serviceDesc, srv)
 }
 
-func _OrderService_AddRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_AddRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddRestaurantRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).AddRestaurant(ctx, in)
+		return srv.(RestaurantServiceServer).AddRestaurant(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/AddRestaurant",
+		FullMethod: "/restaurant.RestaurantService/AddRestaurant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).AddRestaurant(ctx, req.(*AddRestaurantRequest))
+		return srv.(RestaurantServiceServer).AddRestaurant(ctx, req.(*AddRestaurantRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_GetAllRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_GetAllRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAllRestaurantRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).GetAllRestaurant(ctx, in)
+		return srv.(RestaurantServiceServer).GetAllRestaurant(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/GetAllRestaurant",
+		FullMethod: "/restaurant.RestaurantService/GetAllRestaurant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).GetAllRestaurant(ctx, req.(*GetAllRestaurantRequest))
+		return srv.(RestaurantServiceServer).GetAllRestaurant(ctx, req.(*GetAllRestaurantRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_GetSpecificRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_GetSpecificRestaurant_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSpecificRestaurantRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).GetSpecificRestaurant(ctx, in)
+		return srv.(RestaurantServiceServer).GetSpecificRestaurant(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/GetSpecificRestaurant",
+		FullMethod: "/restaurant.RestaurantService/GetSpecificRestaurant",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).GetSpecificRestaurant(ctx, req.(*GetSpecificRestaurantRequest))
+		return srv.(RestaurantServiceServer).GetSpecificRestaurant(ctx, req.(*GetSpecificRestaurantRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_AddRestaurantItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_AddRestaurantItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(AddRestaurantItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).AddRestaurantItem(ctx, in)
+		return srv.(RestaurantServiceServer).AddRestaurantItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/AddRestaurantItem",
+		FullMethod: "/restaurant.RestaurantService/AddRestaurantItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).AddRestaurantItem(ctx, req.(*AddRestaurantItemRequest))
+		return srv.(RestaurantServiceServer).AddRestaurantItem(ctx, req.(*AddRestaurantItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_UpdateRestaurantItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_UpdateRestaurantItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateRestaurantItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).UpdateRestaurantItem(ctx, in)
+		return srv.(RestaurantServiceServer).UpdateRestaurantItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/UpdateRestaurantItem",
+		FullMethod: "/restaurant.RestaurantService/UpdateRestaurantItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).UpdateRestaurantItem(ctx, req.(*UpdateRestaurantItemRequest))
+		return srv.(RestaurantServiceServer).UpdateRestaurantItem(ctx, req.(*UpdateRestaurantItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_DeleteItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_DeleteItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DeleteItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).DeleteItem(ctx, in)
+		return srv.(RestaurantServiceServer).DeleteItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/DeleteItem",
+		FullMethod: "/restaurant.RestaurantService/DeleteItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).DeleteItem(ctx, req.(*DeleteItemRequest))
+		return srv.(RestaurantServiceServer).DeleteItem(ctx, req.(*DeleteItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_GetAllItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_GetAllItems_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetAllItemsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).GetAllItems(ctx, in)
+		return srv.(RestaurantServiceServer).GetAllItems(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/GetAllItems",
+		FullMethod: "/restaurant.RestaurantService/GetAllItems",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).GetAllItems(ctx, req.(*GetAllItemsRequest))
+		return srv.(RestaurantServiceServer).GetAllItems(ctx, req.(*GetAllItemsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OrderService_GetSpecificItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _RestaurantService_GetSpecificItem_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSpecificItemRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OrderServiceServer).GetSpecificItem(ctx, in)
+		return srv.(RestaurantServiceServer).GetSpecificItem(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restaurant.OrderService/GetSpecificItem",
+		FullMethod: "/restaurant.RestaurantService/GetSpecificItem",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OrderServiceServer).GetSpecificItem(ctx, req.(*GetSpecificItemRequest))
+		return srv.(RestaurantServiceServer).GetSpecificItem(ctx, req.(*GetSpecificItemRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _OrderService_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "restaurant.OrderService",
-	HandlerType: (*OrderServiceServer)(nil),
+var _RestaurantService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "restaurant.RestaurantService",
+	HandlerType: (*RestaurantServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "AddRestaurant",
-			Handler:    _OrderService_AddRestaurant_Handler,
+			Handler:    _RestaurantService_AddRestaurant_Handler,
 		},
 		{
 			MethodName: "GetAllRestaurant",
-			Handler:    _OrderService_GetAllRestaurant_Handler,
+			Handler:    _RestaurantService_GetAllRestaurant_Handler,
 		},
 		{
 			MethodName: "GetSpecificRestaurant",
-			Handler:    _OrderService_GetSpecificRestaurant_Handler,
+			Handler:    _RestaurantService_GetSpecificRestaurant_Handler,
 		},
 		{
 			MethodName: "AddRestaurantItem",
-			Handler:    _OrderService_AddRestaurantItem_Handler,
+			Handler:    _RestaurantService_AddRestaurantItem_Handler,
 		},
 		{
 			MethodName: "UpdateRestaurantItem",
-			Handler:    _OrderService_UpdateRestaurantItem_Handler,
+			Handler:    _RestaurantService_UpdateRestaurantItem_Handler,
 		},
 		{
 			MethodName: "DeleteItem",
-			Handler:    _OrderService_DeleteItem_Handler,
+			Handler:    _RestaurantService_DeleteItem_Handler,
 		},
 		{
 			MethodName: "GetAllItems",
-			Handler:    _OrderService_GetAllItems_Handler,
+			Handler:    _RestaurantService_GetAllItems_Handler,
 		},
 		{
 			MethodName: "GetSpecificItem",
-			Handler:    _OrderService_GetSpecificItem_Handler,
+			Handler:    _RestaurantService_GetSpecificItem_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

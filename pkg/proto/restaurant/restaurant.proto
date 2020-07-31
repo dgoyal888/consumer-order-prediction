@@ -89,7 +89,7 @@ message GetSpecificItemResponse {
     Item item = 1;
 }
 
-service OrderService {
+service RestaurantService {
     rpc AddRestaurant(AddRestaurantRequest) returns (AddRestaurantResponse){}
     rpc GetAllRestaurant(GetAllRestaurantRequest) returns (GetAllRestaurantResponse){}
     rpc GetSpecificRestaurant(GetSpecificRestaurantRequest) returns (GetSpecificRestaurantResponse){}
