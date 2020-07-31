@@ -3,7 +3,6 @@ package service
 import (
 	"context"
 	"encoding/json"
-
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	orderpb "github.com/consumer-order-prediction/pkg/proto/orders"
 	"github.com/consumer-order-prediction/util"
@@ -90,7 +89,7 @@ func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecific
 		},err
 	}
 
-	var order *orderpb.Order
+	var order *Order
 	err = json.Unmarshal(resJSON, &order)
 
 	if err != nil {
@@ -98,8 +97,27 @@ func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecific
 		},err
 	}
 
+	var itempbSlice []*orderpb.Item
+
+	for _,item := range order.Items {
+		itempb := &orderpb.Item{
+			ItemId:item.ItemID,
+			Name:item.Name,
+			Cost:item.Cost,
+			Quantity:item.Quantity,
+		}
+		itempbSlice = append(itempbSlice,itempb)
+	}
+
+
 	resp := &orderpb.GetSpecificOrderResponse{
-		Order:order,
+		Order:&orderpb.Order{
+			CustomerId:order.CustomerID,
+			OrderId:order.OrderID,
+			RestaurantId:order.RestaurantID,
+			Discount:order.Discount,
+			Items:itempbSlice,
+		},
 	}
 	return resp,nil
 }
