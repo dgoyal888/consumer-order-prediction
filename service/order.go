@@ -41,7 +41,6 @@ func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest
 	}
 
 	orderID, err := util.GenerateUUID()
-	//fmt.Println("order id is ",orderID)
 	if err != nil {
 		return & orderpb.PlaceOrderResponse{
 			Response:"Error occurred while placing order",
@@ -123,14 +122,68 @@ func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecific
 }
 
 
-func (s *Service) DeleteOrder(ctx context.Context, req *orderpb.DeleteOrderRequest) (*orderpb.DeleteOrderResponse, error) {
-
-
-	return nil,nil
-}
-
 func (s *Service) UpdateOrder(ctx context.Context, req *orderpb.UpdateOrderRequest) (*orderpb.UpdateOrderResponse, error) {
+	customerId := req.GetCustomerId()
+	orderId := req.GetOrderId()
+	itemId := req.GetItemId()
+	quantity := req.GetQuantity()
 
+	existingOrder, err := dynamodb.GetItem("orderDemo","CustomerID",customerId,"OrderID",orderId,&Order{})
 
-	return nil,nil
+	if err != nil {
+		return & orderpb.UpdateOrderResponse{
+		},err
+	}
+
+	existingOrderJSON,err := json.Marshal(existingOrder)
+
+	if err != nil {
+		return & orderpb.UpdateOrderResponse{
+		},err
+	}
+
+	var order *Order
+	err = json.Unmarshal(existingOrderJSON, &order)
+
+	for i,item := range order.Items {
+		if item.ItemID == itemId {
+			item.Quantity = quantity
+			order.Items[i] = item
+			break
+		}
+	}
+
+	i := 0
+	for _, item := range order.Items {
+		if item.Quantity > 0 {
+			order.Items[i] = item
+			i++
+		}
+	}
+
+	order.Items = order.Items[:i]
+
+	err = dynamodb.PutItem("orderDemo",order)
+
+	return & orderpb.UpdateOrderResponse{
+		Response:"Order Updated",
+	},err
 }
+
+
+func (s *Service) DeleteOrder(ctx context.Context, req *orderpb.DeleteOrderRequest) (*orderpb.DeleteOrderResponse, error) {
+	customerId := req.GetCustomerId()
+	orderId := req.GetOrderId()
+
+	err := dynamodb.DeleteItem("orderDemo","CustomerID",customerId,"OrderID",orderId)
+
+	if err != nil {
+		return & orderpb.DeleteOrderResponse{
+		},err
+	}
+
+	return & orderpb.DeleteOrderResponse{
+		Response:"Order Deleted Successfully",
+	},err
+}
+

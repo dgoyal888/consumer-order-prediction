@@ -30,7 +30,10 @@ message PlaceOrderResponse {
 }
 
 message UpdateOrderRequest {
-    Order order = 1;
+    string customer_id = 1;
+    string order_id = 2;
+    string item_id = 3;
+    int64 quantity = 4;
 }
 
 message UpdateOrderResponse {
@@ -49,7 +52,8 @@ message GetSpecificOrderResponse {
 
 
 message DeleteOrderRequest {
-    int64 order_id = 1;
+    string customer_id = 1;
+    string order_id = 2;
 }
 
 message DeleteOrderResponse {

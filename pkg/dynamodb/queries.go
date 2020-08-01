@@ -27,7 +27,7 @@ func PutItem(tableName string, values interface{}) error {
 	return err
 }
 
-func GetItem(tableName string, primaryKey string,primaryKeyValue string, secondaryKey string,secondaryKeyValue string,outputItem interface{}) (interface{}, error) {
+func GetItem(tableName string, primaryKey string,primaryKeyValue string, sortKey string,sortKeyValue string,outputItem interface{}) (interface{}, error) {
 
 	params := &dynamodb.GetItemInput{
 		TableName:aws.String(tableName),
@@ -35,8 +35,8 @@ func GetItem(tableName string, primaryKey string,primaryKeyValue string, seconda
 			primaryKey: {
 				S: aws.String(primaryKeyValue),
 			},
-			secondaryKey: {
-				S: aws.String(secondaryKeyValue),
+			sortKey: {
+				S: aws.String(sortKeyValue),
 			},
 		},
 	}
@@ -48,4 +48,28 @@ func GetItem(tableName string, primaryKey string,primaryKeyValue string, seconda
 	}
 	err = dynamodbattribute.UnmarshalMap(resp.Item,outputItem)
 	return outputItem,err
+}
+
+func DeleteItem(tableName string, primaryKey string, primaryKeyValue string,secondaryKey string,sortKeyValue string) error {
+
+	params := &dynamodb.DeleteItemInput{
+		TableName: aws.String(tableName),
+		Key: map[string]*dynamodb.AttributeValue{
+			primaryKey: {
+				S: aws.String(primaryKeyValue),
+			},
+			secondaryKey: {
+				S: aws.String(sortKeyValue),
+			},
+		},
+	}
+
+	_,err := DynamoClient.DeleteItem(params)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+
 }
