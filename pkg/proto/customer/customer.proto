@@ -1,9 +1,5 @@
 syntax="proto3";
-
-
 package customer;
-
-
 option go_package="pkg/proto/customer";
 
 message Customer {
@@ -20,25 +16,20 @@ message AddCustomerRequest {
 message AddCustomerResponse {
     string response = 1;
 }
-
-
 message GetAllCustomerRequest {
 
 }
-
 message GetAllCustomerResponse {
-    repeated Customer customers = 1;
+    int64 count = 1;
 }
 
 message GetSpecificCustomerRequest {
-    int64 customer_id = 1;
+    string customer_id = 1;
 }
 
 message GetSpecificCustomerResponse {
     Customer customer = 1;
 }
-
-
 
 service CustomerService {
     rpc AddCustomer(AddCustomerRequest) returns (AddCustomerResponse){}

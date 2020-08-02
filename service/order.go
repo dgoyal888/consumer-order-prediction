@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	orderpb "github.com/consumer-order-prediction/pkg/proto/orders"
 	"github.com/consumer-order-prediction/util"
@@ -77,6 +78,7 @@ func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest
 	}
 
 	orderID, err := util.GenerateUUID()
+	fmt.Println(orderID)
 	if err != nil {
 		return & orderpb.PlaceOrderResponse{
 			Response:"Error occurred while placing order",
