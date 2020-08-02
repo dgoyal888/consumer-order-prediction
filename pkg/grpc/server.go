@@ -1,12 +1,8 @@
 package main
 
 import (
-	//"github.com/consumer-order-prediction/pkg/rules"
-	//"context"
-	//"fmt"
 	"log"
 	"net"
-
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
 	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
