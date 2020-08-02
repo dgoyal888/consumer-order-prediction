@@ -6,6 +6,7 @@ import (
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	orderpb "github.com/consumer-order-prediction/pkg/proto/orders"
 	"github.com/consumer-order-prediction/util"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
 type Item struct {
@@ -21,6 +22,18 @@ type Order struct {
 		RestaurantID string
 		Items        []*Item
 		Discount float32
+}
+
+var (
+	anshuman_cnt = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "Anshuman_count",
+			Help: "Current number of jobs in the queue",
+		})
+)
+
+func init()  {
+	prometheus.MustRegister(anshuman_cnt)
 }
 
 
@@ -71,6 +84,8 @@ func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest
 }
 
 func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecificOrderRequest) (*orderpb.GetSpecificOrderResponse, error) {
+
+	anshuman_cnt.Inc()
 
 	customerID := req.CustomerId
 	orderID := req.OrderId
