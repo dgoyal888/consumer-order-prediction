@@ -88,8 +88,6 @@ func main() {
 	}
 
 	dynamodb.NewClient()
-	fmt.Println("after aws dynamo")
-
 
 	s := grpc.NewServer()
 

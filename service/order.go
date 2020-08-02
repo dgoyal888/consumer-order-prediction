@@ -25,19 +25,42 @@ type Order struct {
 }
 
 var (
-	anshuman_cnt = prometheus.NewGauge(
+	PlaceOrderCnt = prometheus.NewGauge(
 		prometheus.GaugeOpts{
-			Name: "Anshuman_count",
-			Help: "Current number of jobs in the queue",
+			Name: "place_order_cnt",
+			Help: "no of times Placeorder was hit",
+		})
+
+	GetSpecificOrderCnt = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "get_specific_order_cnt",
+			Help: "no of times GetSpecificOrder was hit",
+		})
+
+	UpdateOrderCnt = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "update_order_cnt",
+			Help: "no of times UpdateOrder was hit",
+		})
+
+	DeleteOrderCnt = prometheus.NewGauge(
+		prometheus.GaugeOpts{
+			Name: "delete_order_cnt",
+			Help: "no of times DeleteOrder was hit",
 		})
 )
 
 func init()  {
-	prometheus.MustRegister(anshuman_cnt)
+	prometheus.MustRegister(PlaceOrderCnt)
+	prometheus.MustRegister(GetSpecificOrderCnt)
+	prometheus.MustRegister(UpdateOrderCnt)
+	prometheus.MustRegister(DeleteOrderCnt)
 }
 
 
 func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest) (*orderpb.PlaceOrderResponse, error) {
+
+	PlaceOrderCnt.Inc()
 
 	order := req.GetOrder()
 
@@ -85,7 +108,7 @@ func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest
 
 func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecificOrderRequest) (*orderpb.GetSpecificOrderResponse, error) {
 
-	anshuman_cnt.Inc()
+	GetSpecificOrderCnt.Inc()
 
 	customerID := req.CustomerId
 	orderID := req.OrderId
@@ -138,6 +161,9 @@ func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecific
 
 
 func (s *Service) UpdateOrder(ctx context.Context, req *orderpb.UpdateOrderRequest) (*orderpb.UpdateOrderResponse, error) {
+
+	UpdateOrderCnt.Inc()
+
 	customerId := req.GetCustomerId()
 	orderId := req.GetOrderId()
 	itemId := req.GetItemId()
@@ -187,6 +213,9 @@ func (s *Service) UpdateOrder(ctx context.Context, req *orderpb.UpdateOrderReque
 
 
 func (s *Service) DeleteOrder(ctx context.Context, req *orderpb.DeleteOrderRequest) (*orderpb.DeleteOrderResponse, error) {
+
+	DeleteOrderCnt.Inc()
+
 	customerId := req.GetCustomerId()
 	orderId := req.GetOrderId()
 
