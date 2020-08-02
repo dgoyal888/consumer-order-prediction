@@ -232,7 +232,7 @@ func GetSpecificOrder (c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"Message":res.Order,
+		"Order":res.Order,
 	})
 }
 
@@ -268,7 +268,7 @@ func AddCustomer (c *gin.Context) {
 }
 
 func GetSpecificCustomer (c *gin.Context) {
-	customerId := c.Param("id")
+	customerId := c.Param("customerid")
 
 	req := &customerpb.GetSpecificCustomerRequest{
 		CustomerId:customerId,
@@ -293,7 +293,7 @@ func GetSpecificCustomer (c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"Message":res.Customer,
+		"Customer":res.Customer,
 	})
 }
 
@@ -321,7 +321,7 @@ func GetCustomerCount (c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"Message":res.Count,
+		"Total Customers":res.Count,
 	})
 }
 
@@ -344,8 +344,8 @@ func main(){
 
 
 	//Customer API's
-	api.GET("/customer/:id",GetSpecificCustomer)
-	api.GET("/customer/count",GetCustomerCount)
+	api.GET("/customer/:customerid",GetSpecificCustomer)
+	api.GET("/customers",GetCustomerCount)
 	api.POST("/customer", AddCustomer)
 
 
