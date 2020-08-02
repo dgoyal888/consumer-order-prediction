@@ -27,11 +27,11 @@ message GetAllCustomerRequest {
 }
 
 message GetAllCustomerResponse {
-    repeated Customer customers = 1;
+    int64 count = 1;
 }
 
 message GetSpecificCustomerRequest {
-    int64 customer_id = 1;
+    string customer_id = 1;
 }
 
 message GetSpecificCustomerResponse {
