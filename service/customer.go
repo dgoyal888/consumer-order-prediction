@@ -14,69 +14,65 @@ type Customer struct {
 	LastName   string
 	Address    string
 }
-​
-​
+
 func (s *Service) AddCustomer(ctx context.Context, req *customerpb.AddCustomerRequest) (*customerpb.AddCustomerResponse, error) {
-	​
+
 	cust := req.GetCustomer()
 	customerID, err := util.GenerateUUID()
-	​
 	if err != nil {
 		return & customerpb.AddCustomerResponse{
 			Response:"Error occurred while Adding customer",
 		},err
 	}
-	​
 	var customerStruct = &Customer{
 		CustomerID: customerID,
 		FirstName: cust.GetFirstName(),
 		LastName: cust.GetSecondName(),
 		Address: cust.GetAddress(),
 	}
-	​
+
 	err = dynamodb.PutItem("customers",customerStruct)
-	​
 	if err != nil {
 		return &customerpb.AddCustomerResponse{
 			Response:"Error occurred while adding customer",
 		},err
 	}
-	​
 	res := &customerpb.AddCustomerResponse{
 		Response:"Customer Added successfully",
 	}
 	return res,nil
 }
-​
 func (s *Service) GetSpecificCustomer(ctx context.Context, req *customerpb.GetSpecificCustomerRequest) (*customerpb.GetSpecificCustomerResponse, error) {
+
 	customerID := req.CustomerId
-	​
+
 	res, err := dynamodb.GetItem("customers","CustomerID",customerID,"CustomerID",customerID,&Customer{})
-	​
+
 	if err != nil {
 		return nil,err
 	}
-	​
+
 	resJSON,err := json.Marshal(res)
-	​
+
 	if err != nil {
 		return & customerpb.GetSpecificCustomerResponse{
 		},err
 	}
-	​
+
 	var customer *Customer
 	err = json.Unmarshal(resJSON, &customer)
-	​
+
 	if err != nil {
 		return & customerpb.GetSpecificCustomerResponse{
 		},err
 	}
-	​
+
+
 	resp := &customerpb.GetSpecificCustomerResponse{
 		Customer:&customerpb.Customer{
 			CustomerId:customer.CustomerID,
 			FirstName: customer.FirstName,
-			SecondName : customer.LastName,
+			SecondName: customer.LastName,
 			Address: customer.Address,
 		},
 	}
@@ -95,3 +91,4 @@ func (s *Service) GetAllCustomer(ctx context.Context, req *customerpb.GetAllCust
 		Count:res,
 	},nil
 }
+
