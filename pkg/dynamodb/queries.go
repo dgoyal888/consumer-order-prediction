@@ -73,3 +73,15 @@ func DeleteItem(tableName string, primaryKey string, primaryKeyValue string,seco
 	return nil
 
 }
+
+func GetAllItem(tableName string) (int64,error) {
+	params := &dynamodb.DescribeTableInput{
+			TableName: aws.String(tableName),
+		}
+	resp, err := DynamoClient.DescribeTable(params)
+	if err != nil {
+		return 0, err
+	}
+
+	return aws.Int64Value(resp.Table.ItemCount),nil
+}
