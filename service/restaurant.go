@@ -2,15 +2,60 @@ package service
 
 import (
 	"context"
+	"github.com/consumer-order-prediction/pkg/dynamodb"
 
 	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
 )
 
+type Ritem struct {
+	ItemID   string
+	Name     string
+	Price     float32
+}
+
+type Restaurant struct {
+	RestaurantID   string
+	RestaurantName      string
+	Address string
+	Ritems        []*Ritem
+}
+
 
 func (s *Service) AddRestaurant(ctx context.Context, req *restaurantpb.AddRestaurantRequest) (*restaurantpb.AddRestaurantResponse, error) {
 
+	restaurant := req.GetRestaurant()
 
-	return nil,nil
+	var ritemSlice []*Ritem
+	var ritem *Ritem
+	for _,z := range restaurant.Items{
+		ritem = &Ritem{
+			ItemID: z.ItemId,
+			Name: z.Name,
+			Price: z.Price,
+		}
+		ritemSlice = append(ritemSlice,ritem)
+	}
+
+	var restaurantStruct = &Restaurant{
+		RestaurantID: restaurant.RestaurantId,
+		RestaurantName: restaurant.Name,
+		Address: restaurant.Address,
+		Ritems: ritemSlice,
+	}
+
+	err := dynamodb.PutItem("restaurantdemo",restaurantStruct)
+
+	if err != nil {
+		return & restaurantpb.AddRestaurantResponse{
+			Response:"Error occurred while adding restaurant",
+		},err
+	}
+
+	res := & restaurantpb.AddRestaurantResponse{
+		Response:"Restaurant added successfully",
+	}
+
+	return res,nil
 }
 
 func (s *Service) GetAllRestaurant(ctx context.Context, req *restaurantpb.GetAllRestaurantRequest) (*restaurantpb.GetAllRestaurantResponse, error) {
