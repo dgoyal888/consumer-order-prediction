@@ -1,14 +1,14 @@
 package main
 
 import (
-	"log"
-	"net"
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
 	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
 	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
 	"github.com/consumer-order-prediction/service"
 	"google.golang.org/grpc"
+	"log"
+	"net"
 )
 
 
