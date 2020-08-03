@@ -33,7 +33,7 @@ message GetAllRestaurantRequest {
 }
 
 message GetAllRestaurantResponse {
-    repeated Restaurant restaurants = 1;
+    int64 count = 1;
 }
 
 message GetSpecificRestaurantRequest {

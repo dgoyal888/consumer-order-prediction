@@ -3,7 +3,6 @@ package service
 import (
 	"context"
 	"github.com/consumer-order-prediction/pkg/dynamodb"
-
 	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
 )
 
@@ -60,8 +59,15 @@ func (s *Service) AddRestaurant(ctx context.Context, req *restaurantpb.AddRestau
 
 func (s *Service) GetAllRestaurant(ctx context.Context, req *restaurantpb.GetAllRestaurantRequest) (*restaurantpb.GetAllRestaurantResponse, error) {
 
+	res, err := dynamodb.GetAllItem("restaurantdemo")
+	if err != nil {
+		return & restaurantpb.GetAllRestaurantResponse{
+		},err
+	}
 
-	return nil,nil
+	return & restaurantpb.GetAllRestaurantResponse{
+		Count: res,
+	},nil
 }
 
 func (s *Service) GetSpecificRestaurant(ctx context.Context, req *restaurantpb.GetSpecificRestaurantRequest) (*restaurantpb.GetSpecificRestaurantResponse, error) {
