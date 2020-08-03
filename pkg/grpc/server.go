@@ -87,8 +87,18 @@ func main() {
 	orderspb.RegisterOrderServiceServer(s, &service.Service{})
 	restaurantpb.RegisterRestaurantServiceServer(s, &service.Service{})
 
+	//wg:= new(sync.WaitGroup)
+	//wg.Add(1)
+	//
+	//go func() {
+	//	http.Handle("/metrics", promhttp.Handler())
+	//	panic(http.ListenAndServe(":6565", nil))
+	//	wg.Done()
+	//}()
+
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
+
 }
