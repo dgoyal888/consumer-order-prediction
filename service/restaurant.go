@@ -136,9 +136,6 @@ func (s *Service) AddRestaurantItem(ctx context.Context, req *restaurantpb.AddRe
 	return &restaurantpb.AddRestaurantItemResponse{
 		Response:"Item Added Successfully",
 	},nil
-
-
-	return nil,nil
 }
 
 func (s *Service) UpdateRestaurantItem(ctx context.Context, req *restaurantpb.UpdateRestaurantItemRequest) (*restaurantpb.UpdateRestaurantItemResponse, error) {
