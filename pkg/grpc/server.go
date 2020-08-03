@@ -1,22 +1,14 @@
 package main
 
 import (
-	"fmt"
+	"log"
+	"net"
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
 	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
 	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
 	"github.com/consumer-order-prediction/service"
-	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"google.golang.org/grpc"
-	"net/http"
-	"sync"
-
-//"github.com/consumer-order-prediction/pkg/rules"
-//"context"
-//"fmt"
-"log"
-"net"
 )
 
 
@@ -95,19 +87,18 @@ func main() {
 	orderspb.RegisterOrderServiceServer(s, &service.Service{})
 	restaurantpb.RegisterRestaurantServiceServer(s, &service.Service{})
 
-	wg:= new(sync.WaitGroup)
-	wg.Add(1)
-
-	go func() {
-		http.Handle("/metrics", promhttp.Handler())
-		panic(http.ListenAndServe(":6565", nil))
-		wg.Done()
-	}()
+	//wg:= new(sync.WaitGroup)
+	//wg.Add(1)
+	//
+	//go func() {
+	//	http.Handle("/metrics", promhttp.Handler())
+	//	panic(http.ListenAndServe(":6565", nil))
+	//	wg.Done()
+	//}()
 
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
-	fmt.Println("after tcp")
 
 }
