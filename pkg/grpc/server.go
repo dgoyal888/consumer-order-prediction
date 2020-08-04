@@ -1,6 +1,6 @@
 package main
 
-import (
+/*import (
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
 	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
@@ -73,7 +73,7 @@ func (s *server) GetSpecificOrder(ctx context.Context, req *orderspb.GetSpecific
 
 func main() {
 
-	lis, err := net.Listen("tcp", ":50051")
+	/*lis, err := net.Listen("tcp", ":50051")
 
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
@@ -99,6 +99,6 @@ func main() {
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
-	}
+	}*/
 
 }
