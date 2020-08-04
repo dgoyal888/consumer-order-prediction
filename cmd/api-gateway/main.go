@@ -14,6 +14,8 @@ import (
 	"log"
 	"net/http"
 )
+
+
 // variables for prometheus
 var (
 	PlaceOrderCnt = prometheus.NewGauge(
@@ -74,101 +76,6 @@ func HomePage(c *gin.Context) {
 	})
 }
 
-//Return most popular restaurant with the help of grpc
-/*func  GetPoplarRestaurant(c *gin.Context) {
-
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	defer conn.Close()
-
-	client := orderspb.NewOrderServiceClient(conn)
-
-	req := &orderspb.GetPopularRestaurantRequest{
-	}
-
-	res, err := client.GetPopularRestaurant(context.Background(), req)
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	c.JSON(200, gin.H{
-		"Most Popular Restaurant": res.Name,
-	})
-}
-
-func  GetPopularVegCuisine(c *gin.Context) {
-
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	defer conn.Close()
-
-	client := orderspb.NewOrderServiceClient(conn)
-
-	req := &orderspb.GetPopularVegCuisineRequest{
-	}
-
-	res, err := client.GetPopularVegCuisine(context.Background(), req)
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	c.JSON(200, gin.H{
-		"Most Popular Veg Cuisine is": res.Name,
-	})
-}
-
-
-//Return a specific order on the basis of customer id with the help of gRPC
-func GetSpecificOrdersByQuery(c *gin.Context) {
-
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	defer conn.Close()
-
-	client := orderspb.NewOrderServiceClient(conn)
-
-	customerid := c.Query("CustomerID")
-
-	req := &orderspb.GetSpecificOrderRequest{
-		OrderId:customerid,
-	}
-
-	res, err := client.GetSpecificOrder(context.Background(), req)
-
-	if err != nil {
-		log.Fatalf("Error While calling GreetFullName : %v", err)
-	}
-
-	if err!=nil{
-		c.JSON(200, gin.H{
-			"message":"customer not found",
-		})
-	}else {
-		ginRes := &csv.Order{
-			CustomerID:res.GetOrder().CustomerId,
-			CustomerName:res.GetOrder().CustomerName,
-			RestsurantName:res.GetOrder().RestsurantName,
-			VegCuisine:res.GetOrder().VegCuisine,
-			NonVegCuisine:res.GetOrder().NonvegCuisine,
-			State:res.GetOrder().State,
-		}
-		c.JSON(200,ginRes)
-	}
-}*/
 
 // for generating token
 func Login(c *gin.Context) {
@@ -696,12 +603,6 @@ func main(){
 	api.PUT("restaurant/:restaurantid/item",UpdateRestaurantItem)
 	api.GET("/restaurant/:restaurantid/items",GetAllItems)
 	api.DELETE("restaurant/:restaurantid/item/:itemid",DeleteRestaurant)
-
-
-
-	//api.GET("/popularrestaurant", GetPoplarRestaurant)
-	//api.GET("/popularcuisine", GetPopularVegCuisine)
-	//api.GET("/orders", GetSpecificOrdersByQuery)
 
 	router.Run("localhost:5656")
 }
