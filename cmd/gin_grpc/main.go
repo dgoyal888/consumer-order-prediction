@@ -678,7 +678,7 @@ func main(){
 	//Order API's
 	api.POST("/order", PlaceOrder)
 	api.PUT("/order", UpdateOrder)
-	api.DELETE("/deleteOrder/:id", DeleteOrder)
+	api.DELETE("/customer/:customerid/order/:id", DeleteOrder)
 	api.GET("/customer/:customerid/order/:orderid",GetSpecificOrder)
 
 
