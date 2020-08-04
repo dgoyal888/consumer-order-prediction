@@ -106,26 +106,26 @@ func TestGetSpecificOrder(t *testing.T)  {
 	router.ServeHTTP(w, req)
 }
 
-//func TestDeleteOrder(t *testing.T)  {
-//	router := gin.Default()
-//	api := router.Group("/api")
-//	api.DELETE("/deleteOrder/:id", DeleteOrder)
-//
-//	w := httptest.NewRecorder()
-//
-//	customerId := "bc011d3b-7337-4abe-9e56-8005e64403ee"
-//	orderId := "a45347c9-a965-4bc3-8131-bf7705885031"
-//	url := "/api/deleteOrder/" + orderId
-//
-//	req, err := http.NewRequest("DELETE",url,nil)
-//	req.Header.Add("Authorization",Token)
-//
-//	response := httptest.NewRecorder()
-//	if err != nil{
-//		t.Fatalf("Error While deleting specific Order : %v ", err)
-//	}
-//	assert.Equal(t, 200, response.Code, "Order deleted successful")
-//
-//	router.ServeHTTP(w, req)
-//}
+func TestDeleteOrder(t *testing.T)  {
+	router := gin.Default()
+	api := router.Group("/api")
+	api.DELETE("/customer/:customerid/order/:id", DeleteOrder)
+
+	w := httptest.NewRecorder()
+
+	customerId := "bc011d3b-7337-4abe-9e56-8005e64403ee"
+	orderId := "a45347c9-a965-4bc3-8131-bf7705885031"
+	url := "/api/customer/" + customerId + "/order/" + orderId
+
+	req, err := http.NewRequest("DELETE",url,nil)
+	req.Header.Add("Authorization",Token)
+
+	response := httptest.NewRecorder()
+	if err != nil{
+		t.Fatalf("Error While deleting specific Order : %v ", err)
+	}
+	assert.Equal(t, 200, response.Code, "Order deleted successful")
+
+	router.ServeHTTP(w, req)
+}
 
