@@ -288,6 +288,7 @@ func DeleteOrder (c *gin.Context) {
 	id := c.Param("id")
 
 	req := &orderspb.DeleteOrderRequest{
+		CustomerId:c.Param("customerid"),
 		OrderId:id,
 	}
 
@@ -678,7 +679,7 @@ func main(){
 	//Order API's
 	api.POST("/order", PlaceOrder)
 	api.PUT("/order", UpdateOrder)
-	api.DELETE("/deleteOrder/:id", DeleteOrder)
+	api.DELETE("/customer/:customerid/order/:id", DeleteOrder)
 	api.GET("/customer/:customerid/order/:orderid",GetSpecificOrder)
 
 
