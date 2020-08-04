@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 	"github.com/consumer-order-prediction/pkg/dynamodb"
 	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
 	"github.com/consumer-order-prediction/util"
@@ -19,6 +20,7 @@ func (s *Service) AddCustomer(ctx context.Context, req *customerpb.AddCustomerRe
 
 	cust := req.GetCustomer()
 	customerID, err := util.GenerateUUID()
+	fmt.Println(customerID)
 	if err != nil {
 		return & customerpb.AddCustomerResponse{
 			Response:"Error occurred while Adding customer",
