@@ -8,8 +8,8 @@ import (
 	"testing"
 	"google.golang.org/grpc/test/bufconn"
 
-	orderpb "github.com/consumer-order-prediction/pkg/proto/orders"
-	"github.com/consumer-order-prediction/pkg/dynamodb"
+	orderpb "github.com/cdgoyal888/onsumer-order-prediction/pkg/proto/orders"
+	"github.com/dgoyal888/consumer-order-prediction/pkg/dynamodb"
 )
 
 const bufSize = 1024 * 1024

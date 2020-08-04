@@ -1,0 +1,6 @@
+ FROM golang:1.14
+ WORKDIR /usr/go-gin/app
+ COPY . /usr/go-gin/app
+ RUN go build -o gin_server ./cmd/ApicallGin
+ EXPOSE 5656
+ CMD ["/usr/go-gin/app/gin_server"]

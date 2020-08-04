@@ -1,0 +1,6 @@
+ FROM golang:1.14
+ WORKDIR /usr/go-order/app
+ COPY . /usr/go-order/app
+ RUN go build -o order_server ./pkg/grpc/order-service
+ EXPOSE 50051
+ CMD ["/usr/go-order/app/order_server"]

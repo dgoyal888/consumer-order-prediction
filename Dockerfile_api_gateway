@@ -1,0 +1,6 @@
+ FROM golang:1.14
+ WORKDIR /usr/go-api/app
+ COPY . /usr/go-api/app
+ RUN go build -o api_server ./cmd/api-gateway
+ EXPOSE 5858
+ CMD ["/usr/go-api/app/api_server"]

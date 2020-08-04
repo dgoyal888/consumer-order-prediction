@@ -3,10 +3,10 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/consumer-order-prediction/pkg/auth"
-	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
-	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
-	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
+	"github.com/dgoyal888/consumer-order-prediction/pkg/auth"
+	customerpb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/customer"
+	orderspb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/orders"
+	restaurantpb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/restaurant"
 	"github.com/gin-gonic/gin"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -70,7 +70,7 @@ type ErrorResponse struct {
 
 func HomePage(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": "Hello World from GIN to Swiggy",
+		"message": "Hello World from GIN_GPRC to Swiggy",
 	})
 }
 
@@ -703,5 +703,5 @@ func main(){
 	//api.GET("/popularcuisine", GetPopularVegCuisine)
 	//api.GET("/orders", GetSpecificOrdersByQuery)
 
-	router.Run("localhost:5656")
+	router.Run("0.0.0.0:5757")
 }

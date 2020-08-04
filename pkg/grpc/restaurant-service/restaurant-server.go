@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/consumer-order-prediction/pkg/dynamodb"
-	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
-	"github.com/consumer-order-prediction/service"
+	"github.com/dgoyal888/consumer-order-prediction/pkg/dynamodb"
+	restaurantpb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/restaurant"
+	"github.com/dgoyal888/consumer-order-prediction/service"
 	"google.golang.org/grpc"
 	"log"
 	"net"

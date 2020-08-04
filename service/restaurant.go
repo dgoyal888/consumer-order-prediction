@@ -3,9 +3,9 @@ package service
 import (
 	"context"
 	"encoding/json"
-	"github.com/consumer-order-prediction/pkg/dynamodb"
-	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
-	"github.com/consumer-order-prediction/util"
+	"github.com/dgoyal888/consumer-order-prediction/pkg/dynamodb"
+	restaurantpb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/restaurant"
+	"github.com/dgoyal888/consumer-order-prediction/util"
 )
 
 type Ritem struct {

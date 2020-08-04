@@ -1,0 +1,6 @@
+ FROM golang:1.14
+ WORKDIR /usr/go-restaurent/app
+ COPY . /usr/go-restaurent/app
+ RUN go build -o restaurent_server ./pkg/grpc/order-service
+ EXPOSE 50052
+ CMD ["/usr/go-restaurent/app/restaurent_server"]

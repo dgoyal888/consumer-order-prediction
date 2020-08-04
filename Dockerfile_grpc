@@ -1,0 +1,6 @@
+ FROM golang:1.14
+ WORKDIR /usr/go-grpc/app
+ COPY . /usr/go-grpc/app
+ RUN go build -o grpc_server ./cmd/gin_grpc
+ EXPOSE 5757
+ CMD ["/usr/go-grpc/app/grpc_server"]

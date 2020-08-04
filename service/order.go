@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/consumer-order-prediction/pkg/dynamodb"
-	orderpb "github.com/consumer-order-prediction/pkg/proto/orders"
-	"github.com/consumer-order-prediction/util"
+	"github.com/dgoyal888/consumer-order-prediction/pkg/dynamodb"
+	orderpb "github.com/dgoyal888/consumer-order-prediction/pkg/proto/orders"
+	"github.com/dgoyal888/consumer-order-prediction/util"
 )
 
 type Item struct {
