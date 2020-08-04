@@ -288,6 +288,7 @@ func DeleteOrder (c *gin.Context) {
 	id := c.Param("id")
 
 	req := &orderspb.DeleteOrderRequest{
+		CustomerId:c.Param("customerid"),
 		OrderId:id,
 	}
 
