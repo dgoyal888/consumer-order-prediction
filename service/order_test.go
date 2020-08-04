@@ -37,7 +37,7 @@ var testOrder = &orderpb.PlaceOrderRequest{
 
 var updateOrder = &orderpb.UpdateOrderRequest{
 	CustomerId:"bc011d3b-7337-4abe-9e56-8005e64403ee",
-	OrderId:"28200a58-363e-45c7-b17b-4a9de2b6abae",
+	OrderId:"4541a5f8-d640-11ea-a41b-c4b301c9617d",
 	ItemId:"28200a58-363e-45c7-b17b-4a9de2b6abae",
 	Quantity: 25,
 }
@@ -76,7 +76,7 @@ func TestPlaceOrder(t *testing.T) {
 	}
 }
 
-/*func TestUpdateOrder(t *testing.T) {
+func TestUpdateOrder(t *testing.T) {
 	ctx := context.Background()
 	conn, err := grpc.DialContext(ctx, "", grpc.WithContextDialer(bufDialer),grpc.WithInsecure())
 	if err != nil {
@@ -92,7 +92,7 @@ func TestPlaceOrder(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Error While calling Create Order : %v ", err)
 	}
-}*/
+}
 
 func TestGetSpecificOrder(t *testing.T) {
 	ctx := context.Background()
