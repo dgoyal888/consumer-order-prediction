@@ -30,7 +30,7 @@ var testOrder = &orderpb.PlaceOrderRequest{
 	},
 }
 
-var Token = "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNTk2NTQ4MzQyLCJ1c2VybmFtZSI6ImFkbWluIn0.LSwKgvGEEWSfpuxVZ1rw8SrRC0lwEprDRA0axGtKXFcuSXnVpIjsqrz8YKj6lsCDzDS5LnhdPpXmKpfDeQQPmQ"
+var Token = "Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZSwiZXhwIjoxNTk2Njc2MTgyLCJ1c2VybmFtZSI6ImFkbWluIn0.M2cobmNIlw3YiYMex-JffQWg-KPGMWTITDBcM_t7Xv_ujY3x9JRfT7vQu4DOidMKAK3Aal0FV_HBp6-kX4rvtw"
 
 
 func TestPlaceOrder(t *testing.T) {
@@ -128,4 +128,3 @@ func TestDeleteOrder(t *testing.T)  {
 
 	router.ServeHTTP(w, req)
 }
-
