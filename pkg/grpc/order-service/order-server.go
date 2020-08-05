@@ -7,13 +7,15 @@ import (
     "github.com/dgoyal888/consumer-order-prediction/service"
     "google.golang.org/grpc"
     "log"
-    "net"
+	"net"
 )
 
 
 func main() {
 
 	lis, err := net.Listen("tcp", ":50051")
+
+	
 
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

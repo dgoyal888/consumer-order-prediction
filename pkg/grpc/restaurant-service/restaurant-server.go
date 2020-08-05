@@ -18,6 +18,7 @@ func main() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
+
 	dynamodb.NewClient()
 
 	s := grpc.NewServer()

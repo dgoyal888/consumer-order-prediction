@@ -119,7 +119,7 @@ func PlaceOrder (c *gin.Context) {
 
 	log.Println(req)
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -159,7 +159,7 @@ func UpdateOrder (c *gin.Context) {
 	}
 	log.Println(req)
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -200,7 +200,7 @@ func DeleteOrder (c *gin.Context) {
 	}
 
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -242,7 +242,7 @@ func GetSpecificOrder (c *gin.Context) {
 	}
 
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -274,7 +274,7 @@ func AddCustomer (c *gin.Context) {
 
 	log.Println(req)
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -303,7 +303,7 @@ func GetSpecificCustomer (c *gin.Context) {
 	}
 
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -331,7 +331,7 @@ func GetCustomerCount (c *gin.Context) {
 	}
 
 
-	conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.3:50051", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -364,7 +364,7 @@ func AddRestaurant (c *gin.Context) {
 
 	log.Println(req)
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -390,7 +390,7 @@ func GetAllRestaurants (c *gin.Context) {
 	req := &restaurantpb.GetAllRestaurantRequest{}
 
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -419,7 +419,7 @@ func GetSpecificRestaurant (c *gin.Context) {
 		RestaurantId:restaurantId,
 	}
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -453,7 +453,7 @@ func AddSpecificItem (c *gin.Context) {
 
 	req.RestaurantId = restaurantId
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -487,7 +487,7 @@ func UpdateRestaurantItem (c *gin.Context) {
 
 	req.RestaurantId = restaurantId
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -517,7 +517,7 @@ func DeleteRestaurant (c *gin.Context) {
 		ItemId:c.Param("itemid"),
 	}
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -547,7 +547,7 @@ func GetAllItems (c *gin.Context) {
 		RestaurantId:restaurantId,
 	}
 
-	conn, err := grpc.Dial("localhost:50052", grpc.WithInsecure())
+	conn, err := grpc.Dial("172.20.0.4:50052", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("Sorry client cannot talk to server: %v: ", err)
 	}
@@ -578,7 +578,7 @@ func main(){
 	api:= router.Group("/api")
 
 
-	// http://localhost:5656/api/
+	// 172.20.0.0:5858/api/
 	api.GET("/",  HomePage)
 
 	api.POST("/login", Login)
@@ -604,5 +604,5 @@ func main(){
 	api.GET("/restaurant/:restaurantid/items",GetAllItems)
 	api.DELETE("restaurant/:restaurantid/item/:itemid",DeleteRestaurant)
 
-	router.Run("0.0.0.0:5858")
+	router.Run(":5858")
 }
