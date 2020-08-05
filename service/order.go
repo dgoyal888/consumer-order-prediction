@@ -205,7 +205,7 @@ func (s *Service) UpdateOrder(ctx context.Context, req *orderpb.UpdateOrderReque
 
 	order.Items = order.Items[:i]
 
-	err = dynamodb.PutItem("orderDemo",order)
+	err = dynamodb.PutItem("t1-order",order)
 
 	return & orderpb.UpdateOrderResponse{
 		Response:"Order Updated",
