@@ -69,7 +69,7 @@ func CreateToken(username string) (string, error) {
 	claims := jwt.MapClaims{}
 	claims["admin"] = true
 	claims["username"] = username
-	claims["exp"] = time.Now().Add(time.Minute * 120).Unix()
+	claims["exp"] = time.Now().Add(time.Minute * 1200).Unix()
 
 	at := jwt.NewWithClaims(jwt.SigningMethodHS512, claims)
 	token, err := at.SignedString([]byte(jwtSecret))
