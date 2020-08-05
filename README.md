@@ -8,6 +8,7 @@ repo for case study 1
 
 ![Screenshot](data/data_to_information.png)
 
+
  
 
 ### GIN Incorporation (phase-2) :-
@@ -43,3 +44,9 @@ To fetch different query :-
 * “Localhost:5656/popularrestaurant” to get popular restaurant
 * “Localhost:5656/order” to place a new order
 * “Localhost:5656/popularcuisine” to check the most popular cuisine
+
+
+### Code Coverage :- 
+![Screenshot](data/order_test_code_coverge.png)
+![Screenshot](data/customer_test_code_coverage.png)
+![Screenshot](data/restaurant_test_code_coverage.png)

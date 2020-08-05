@@ -33,7 +33,7 @@ func (s *Service) AddCustomer(ctx context.Context, req *customerpb.AddCustomerRe
 		Address: cust.GetAddress(),
 	}
 
-	err = dynamodb.PutItem("customers",customerStruct)
+	err = dynamodb.PutItem("t1-customers",customerStruct)
 	if err != nil {
 		return &customerpb.AddCustomerResponse{
 			Response:"Error occurred while adding customer",
@@ -48,7 +48,7 @@ func (s *Service) GetSpecificCustomer(ctx context.Context, req *customerpb.GetSp
 
 	customerID := req.CustomerId
 
-	res, err := dynamodb.GetItem("customers","CustomerID",customerID,"CustomerID",customerID,&Customer{})
+	res, err := dynamodb.GetItem("t1-customers","CustomerID",customerID,"CustomerID",customerID,&Customer{})
 
 	if err != nil {
 		return nil,err
@@ -83,7 +83,7 @@ func (s *Service) GetSpecificCustomer(ctx context.Context, req *customerpb.GetSp
 
 func (s *Service) GetAllCustomer(ctx context.Context, req *customerpb.GetAllCustomerRequest) (*customerpb.GetAllCustomerResponse, error) {
 
-	res, err := dynamodb.GetAllItem("customers")
+	res, err := dynamodb.GetAllItem("t1-customers")
 	if err != nil {
 		return &customerpb.GetAllCustomerResponse{
 		},err

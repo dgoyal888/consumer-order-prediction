@@ -92,7 +92,7 @@ func (s *Service) PlaceOrder(ctx context.Context, req *orderpb.PlaceOrderRequest
 		Discount:order.GetDiscount(),
 	}
 
-	err = dynamodb.PutItem("orderDemo",orderStruct)
+	err = dynamodb.PutItem("t1-order",orderStruct)
 
 	if err != nil {
 		return & orderpb.PlaceOrderResponse{
@@ -114,7 +114,7 @@ func (s *Service) GetSpecificOrder(ctx context.Context, req *orderpb.GetSpecific
 	customerID := req.CustomerId
 	orderID := req.OrderId
 
-	res, err := dynamodb.GetItem("orderDemo","CustomerID",customerID,"OrderID",orderID,&Order{})
+	res, err := dynamodb.GetItem("t1-order","CustomerID",customerID,"OrderID",orderID,&Order{})
 
 	if err != nil {
 		return nil,err
@@ -170,7 +170,7 @@ func (s *Service) UpdateOrder(ctx context.Context, req *orderpb.UpdateOrderReque
 	itemId := req.GetItemId()
 	quantity := req.GetQuantity()
 
-	existingOrder, err := dynamodb.GetItem("orderDemo","CustomerID",customerId,"OrderID",orderId,&Order{})
+	existingOrder, err := dynamodb.GetItem("t1-order","CustomerID",customerId,"OrderID",orderId,&Order{})
 
 	if err != nil {
 		return & orderpb.UpdateOrderResponse{
@@ -220,7 +220,7 @@ func (s *Service) DeleteOrder(ctx context.Context, req *orderpb.DeleteOrderReque
 	customerId := req.GetCustomerId()
 	orderId := req.GetOrderId()
 
-	err := dynamodb.DeleteItem("orderDemo","CustomerID",customerId,"OrderID",orderId)
+	err := dynamodb.DeleteItem("t1-order","CustomerID",customerId,"OrderID",orderId)
 
 	if err != nil {
 		return & orderpb.DeleteOrderResponse{
