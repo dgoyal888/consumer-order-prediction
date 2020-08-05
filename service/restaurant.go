@@ -61,7 +61,7 @@ func (s *Service) AddRestaurant(ctx context.Context, req *restaurantpb.AddRestau
 
 func (s *Service) GetAllRestaurant(ctx context.Context, req *restaurantpb.GetAllRestaurantRequest) (*restaurantpb.GetAllRestaurantResponse, error) {
 
-	res, err := dynamodb.GetAllItem("restaurantdemo")
+	res, err := dynamodb.GetAllItem("t1-restaurant")
 	if err != nil {
 		return & restaurantpb.GetAllRestaurantResponse{
 		},err
@@ -265,7 +265,7 @@ func (s *Service) GetSpecificItem(ctx context.Context, req *restaurantpb.GetSpec
 
 func GetRestaurant(restaurantId string) (*Restaurant,error){
 
-	res, err := dynamodb.GetItem("restaurantdemo","RestaurantID",restaurantId,"RestaurantID",restaurantId,&Restaurant{})
+	res, err := dynamodb.GetItem("t1-restaurant","RestaurantID",restaurantId,"RestaurantID",restaurantId,&Restaurant{})
 
 	if err != nil {
 		return &Restaurant{},err
@@ -289,7 +289,7 @@ func GetRestaurant(restaurantId string) (*Restaurant,error){
 
 func AddRestaurant(restaurant *Restaurant) (error){
 
-	err := dynamodb.PutItem("restaurantdemo",restaurant)
+	err := dynamodb.PutItem("t1-restaurant",restaurant)
 
 	return err
 }
