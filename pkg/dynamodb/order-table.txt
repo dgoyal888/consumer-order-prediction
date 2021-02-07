@@ -1,0 +1,3 @@
+//This is just for reference. Create Order table query
+
+aws dynamodb create-table --table-name t1-order --attribute-definitions AttributeName=CustomerID,AttributeType=S AttributeName=OrderID,AttributeType=S --key-schema AttributeName=CustomerID,KeyType=HASH AttributeName=OrderID,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=5 --endpoint-url http://localhost:8000

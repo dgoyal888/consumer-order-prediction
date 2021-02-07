@@ -1,22 +1,22 @@
 package main
 
-import (
-	"github.com/consumer-order-prediction/pkg/rules"
-	"context"
-	"fmt"
+/*import (
+	"github.com/consumer-order-prediction/pkg/dynamodb"
+	customerpb "github.com/consumer-order-prediction/pkg/proto/customer"
+	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
+	restaurantpb "github.com/consumer-order-prediction/pkg/proto/restaurant"
+	"github.com/consumer-order-prediction/service"
+	"google.golang.org/grpc"
 	"log"
 	"net"
-
-	orderspb "github.com/consumer-order-prediction/pkg/proto/orders"
-	"google.golang.org/grpc"
 )
 
 
-type server struct{}
+//type server struct{}
 
 
 // Function implementation for rpc GetPopularRestaurant
-func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
+/*func (s *server) GetPopularRestaurant(ctx context.Context, req *orderspb.GetPopularRestaurantRequest) (*orderspb.GetPopularRestaurantResponse, error) {
 
 	restaurant,err := rules.PopularRestaurant("../../data/orderdata.json")
 
@@ -69,21 +69,36 @@ func (s *server) GetSpecificOrder(ctx context.Context, req *orderspb.GetSpecific
 
 	return res,nil
 }
-
+*/
 
 func main() {
 
-	lis, err := net.Listen("tcp", ":50051")
+	/*lis, err := net.Listen("tcp", ":50051")
 
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
+	dynamodb.NewClient()
+
 	s := grpc.NewServer()
 
-	orderspb.RegisterOrderServiceServer(s, &server{})
+	customerpb.RegisterCustomerServiceServer(s, &service.Service{})
+	orderspb.RegisterOrderServiceServer(s, &service.Service{})
+	restaurantpb.RegisterRestaurantServiceServer(s, &service.Service{})
+
+	//wg:= new(sync.WaitGroup)
+	//wg.Add(1)
+	//
+	//go func() {
+	//	http.Handle("/metrics", promhttp.Handler())
+	//	panic(http.ListenAndServe(":6565", nil))
+	//	wg.Done()
+	//}()
+
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
-	}
+	}*/
+
 }
